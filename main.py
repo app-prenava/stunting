@@ -36,7 +36,50 @@ model: object = None
 feature_columns: list = []
 threshold: float = 0.5
 explainer: object = None
-StuntingInput: type = None
+# ---------------------------------------------------------------------------
+# Models
+# ---------------------------------------------------------------------------
+class StuntingInput(BaseModel):
+    child_gender: int
+    mother_education_level: int
+    mother_employment_status: int
+    mother_height_cm: float
+    improved_water: int
+    improved_sanitation: int
+    home_ownership: int
+    has_electricity: int
+    has_refrigerator: int
+    has_tv: int
+    mother_age_at_birth: float
+    is_teenage_mother: int
+    is_high_risk_mother_age: int
+    has_delivery_insurance: int
+    anc_clinic_midwife: int
+    anc_hospital: int
+    anc_traditional_other: int
+    anc_unknown: int
+
+
+FEATURE_ORDER = [
+    "child_gender",
+    "mother_education_level",
+    "mother_employment_status",
+    "mother_height_cm",
+    "improved_water",
+    "improved_sanitation",
+    "home_ownership",
+    "has_electricity",
+    "has_refrigerator",
+    "has_tv",
+    "mother_age_at_birth",
+    "is_teenage_mother",
+    "is_high_risk_mother_age",
+    "has_delivery_insurance",
+    "anc_clinic_midwife",
+    "anc_hospital",
+    "anc_traditional_other",
+    "anc_unknown"
+]
 
 
 def _load_artifact(path: Path, default=None):
@@ -45,19 +88,6 @@ def _load_artifact(path: Path, default=None):
     if default is not None:
         return default
     raise FileNotFoundError(f"Missing artifact: {path}")
-
-
-def _build_input_model(columns: list) -> type:
-    if columns:
-        return create_model(
-            "StuntingInput",
-            **{col: (float, ...) for col in columns},
-        )
-
-    class _Fallback(BaseModel):
-        pass
-
-    return _Fallback
 
 
 # Linear model classes that need LinearExplainer
@@ -160,7 +190,6 @@ async def lifespan(app: FastAPI):
             logger.warning("SHAP unavailable, falling back to KernelExplainer stub: %s", exc)
             explainer = None
 
-    StuntingInput = _build_input_model(feature_columns)
     logger.info("Startup complete (%.2fs total)", time.perf_counter() - t0)
     yield
     logger.info("Shutting down.")
@@ -194,15 +223,9 @@ async def log_request_timing(request: Request, call_next):
 # Helpers
 # ---------------------------------------------------------------------------
 def _compute_shap_top_factors(df: pd.DataFrame, top_n: int = 5) -> dict:
-    """Return top-N SHAP factors as {feature: shap_value} (lightweight).
-
-    Handles output from:
-    - shap.LinearExplainer  → 2D ndarray (n_samples, n_features)
-    - shap.TreeExplainer    → 2D ndarray OR list of 2 arrays for binary classifiers
-    - shap.KernelExplainer  → 2D ndarray
-    """
+    """Return top-N SHAP factors with impact, value, and human message."""
     if explainer is None:
-        return {}
+        return None
     try:
         import numpy as np
         t0 = time.perf_counter()
@@ -210,15 +233,12 @@ def _compute_shap_top_factors(df: pd.DataFrame, top_n: int = 5) -> dict:
 
         # Normalize to a flat 1D array for the first (only) sample
         if isinstance(raw, list):
-            # Binary classifier: list of [class0_vals, class1_vals]
-            # Use class-1 (positive/stunting class) values
             sv = np.array(raw[1])
         else:
             sv = np.array(raw)
 
-        # Shape may be (n_samples, n_features) or (n_features,)
         if sv.ndim == 2:
-            sv = sv[0]  # first sample
+            sv = sv[0]
 
         feature_names = df.columns.tolist()
         pairs = sorted(
@@ -227,12 +247,29 @@ def _compute_shap_top_factors(df: pd.DataFrame, top_n: int = 5) -> dict:
             reverse=True,
         )
 
-        result = {k: round(v, 6) for k, v in pairs[:top_n]}
+        top_factors = []
+        for feature, val in pairs[:top_n]:
+            impact = "increase_risk" if val > 0 else "decrease_risk"
+            input_val = df[feature].iloc[0]
+            
+            # Simple human message based on impact
+            msg = f"{feature} berkontribusi terhadap {impact.replace('_', ' ')}"
+            
+            top_factors.append({
+                "feature": feature,
+                "impact": impact,
+                "value": input_val,
+                "message": msg
+            })
+
         logger.info("SHAP computed (%.0fms)", (time.perf_counter() - t0) * 1000)
-        return result
+        return {
+            "method": "SHAP",
+            "top_factors": top_factors
+        }
     except Exception as exc:
         logger.warning("SHAP computation failed: %s", exc)
-        return {}
+        return None
 
 
 
@@ -280,14 +317,17 @@ def features():
 
 
 @app.post("/predict")
-def predict(request: Request, data: StuntingInput):
+def predict(data: StuntingInput):
     _assert_ready()
 
     t_total = time.perf_counter()
 
     try:
-        input_dict = data.model_dump()
-        df = pd.DataFrame([input_dict])[feature_columns]
+        # Pydantic v1/v2 compatibility
+        input_dict = data.model_dump() if hasattr(data, 'model_dump') else data.dict()
+        
+        # Enforce strict FEATURE_ORDER
+        df = pd.DataFrame([input_dict])[FEATURE_ORDER]
 
         # --- Inference ---
         t_inf = time.perf_counter()
@@ -295,7 +335,7 @@ def predict(request: Request, data: StuntingInput):
         prediction  = int(probability >= threshold)
         inf_ms = round((time.perf_counter() - t_inf) * 1000)
 
-        # --- SHAP (top-5 only, lightweight) ---
+        # --- SHAP (detailed format) ---
         explanation = _compute_shap_top_factors(df, top_n=5)
 
         total_ms = round((time.perf_counter() - t_total) * 1000)
@@ -305,18 +345,14 @@ def predict(request: Request, data: StuntingInput):
         )
 
         return {
-            "status":        "success",
             "prediction":    prediction,
             "risk_label":    "high_risk" if prediction == 1 else "low_risk",
             "probability":   round(probability, 4),
-            "threshold":     threshold,
+            "model_version": "lr_v1.0",
             "explanation":   explanation,
-            "model_version": type(model).__name__,
-            "latency_ms":    total_ms,
+            "recommendations": []
         }
 
-    except HTTPException:
-        raise
     except Exception as exc:
         logger.exception("Prediction error: %s", exc)
         raise HTTPException(status_code=500, detail=str(exc))
