@@ -1,0 +1,52 @@
+DATA DICTIONARY - IFLS5 (STEP 4: MATERNAL SOCIOECONOMIC FEATURES)
+
+mother_education_level
+Deskripsi: Tingkat pendidikan ibu
+Sumber: ar16
+Dataset: hh14_bk_dta (Book K – Household Roster)
+Referensi: Volume 8 – IFLS5_hh_codebooks
+Status: Use
+Catatan:
+Digunakan sebagai proksi literasi ibu dan pengetahuan gizi. 
+Variabel ini memiliki hubungan kuat dengan risiko stunting berdasarkan literatur WHO dan UNICEF.
+
+mother_employment_status
+Deskripsi: Status aktivitas utama / pekerjaan ibu
+Sumber: ar15c
+Dataset: hh14_bk_dta (Book K – Household Roster)
+Referensi: Volume 8 – IFLS5_hh_codebooks
+Status: Use
+Catatan:
+Digunakan sebagai proksi kondisi sosial ekonomi dan akses sumber daya keluarga.
+
+PIPELINE CONTEXT:
+Step 4:
+Menambahkan fitur sosioekonomi ibu ke dalam dataset hasil Step 3 menggunakan household roster.
+
+Tujuan:
+Memperkaya dataset dengan faktor pendidikan dan pekerjaan ibu sebagai determinan sosial ekonomi terhadap risiko stunting.
+
+VARIABLE MAPPING
+
+ar16 → mother_education_level  
+ar15c → mother_employment_status  
+
+VALIDATION NOTE:
+
+- Merge dilakukan menggunakan mother_pidlink (person-level identifier)
+- Dilakukan normalisasi pidlink sebelum merge
+- Baris tanpa mother_pidlink (176 anak) tidak di-merge
+
+Bug Fix:
+- Menghindari NaN-to-NaN merge dengan filtering:
+  df_mother_socio = df_mother_socio[df_mother_socio["pidlink_norm"].notna()]
+
+Hasil Validasi:
+
+rows_before: 5815  
+rows_after: 5815  
+jumlah anak tanpa ibu: 176  
+validasi fitur socio-economic mereka NaN: Valid (All NaN)
+
+Catatan:
+Anak tanpa data ibu tetap memiliki nilai NaN pada fitur sosioekonomi, sehingga tidak terjadi data leakage atau assignment data yang salah.

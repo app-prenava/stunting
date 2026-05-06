@@ -1,0 +1,70 @@
+# IFLS5 Data Dictionary: Step 4c Maternal-Household Wealth Features
+
+## Fitur Ekstraksi (Raw Variables)
+Dataset: `b2_kr.dta`, `bk_krk.dta`
+
+1. **kr03** (b2_kr)
+   - Deskripsi: Status kepemilikan rumah (What is the status your house?)
+   - Code: 1 (Self owned), 2 (Occupying), 5 (Rented), 95 (Other)
+
+2. **kr11** (b2_kr)
+   - Deskripsi: Penggunaan listrik rumah tangga
+   - Code: 1 (Yes), 3 (No)
+
+3. **kr23** (b2_kr)
+   - Deskripsi: Kepemilikan kulkas (Do you store perishable food in refrigerator?)
+   - Code: 1 (Yes), 3 (No), 6 (Don't have)
+
+4. **kr24a** (b2_kr)
+   - Deskripsi: Kepemilikan televisi
+   - Code: 1 (Yes), 3 (No)
+
+5. **krk08** (bk_krk)
+   - Deskripsi: Material utama lantai
+   - Code: 1 (Keramik/Marmer), 2 (Tegel/Teraso), 3 (Semen/Bata), 4 (Kayu/Papan), 5 (Bambu), 6 (Tanah), 95 (Other)
+
+6. **krk09** (bk_krk)
+   - Deskripsi: Material utama dinding luar
+   - Code: 1 (Tembok semen/bata), 2 (Kayu/Papan), 3 (Bambu/Anyaman), 95 (Other)
+
+7. **krk10** (bk_krk)
+   - Deskripsi: Material utama atap
+   - Code: 1 (Beton), 2 (Kayu), 3 (Seng), 4 (Genteng), 5 (Asbes), 6 (Daun/Bambu), 95 (Other)
+
+## Mapping Hasil (Features)
+Semua fitur dipisahkan ke dalam binary indicator agar mendukung *Explainable AI* (SHAP/LIME) secara gamblang. Semua fitur memiliki *status: ACCEPTED* untuk *pipeline* prediksi.
+
+1. **home_ownership**
+   - 1 = Milik sendiri (`kr03 == 1`)
+   - 0 = Tidak memiliki rumah (Menumpang/Sewa/Lainnya)
+
+2. **has_electricity**
+   - 1 = Memiliki akses listrik (`kr11 == 1`)
+   - 0 = Tidak memiliki listrik
+
+3. **has_refrigerator**
+   - 1 = Memiliki kulkas (`kr23 == 1`)
+   - 0 = Tidak memiliki kulkas
+
+4. **has_tv**
+   - 1 = Memiliki TV (`kr24a == 1`)
+   - 0 = Tidak memiliki TV
+
+5. **quality_floor**
+   - 1 = Berkualitas tinggi (Semen/Bata/Keramik/Tegel) -> `krk08` in [1, 2, 3]
+   - 0 = Kualitas rendah (Tanah/Bambu/Papan) -> `krk08` in [4, 5, 6]
+
+6. **quality_wall**
+   - 1 = Berkualitas tinggi (Tembok permanen) -> `krk09` == 1
+   - 0 = Kualitas rendah (Bambu/Papan) -> `krk09` in [2, 3]
+
+7. **quality_roof**
+   - 1 = Berkualitas tinggi (Genteng/Beton/Asbes/Seng) -> `krk10` in [1, 3, 4, 5]
+   - 0 = Kualitas rendah (Daun/Kayu) -> `krk10` in [2, 6]
+
+---
+
+## Catatan Bebas Kebocoran Temporal (Temporal Leakage Free)
+Fitur *household socioeconomic* dan lingkungan fisik bangunan ditambahkan karena merepresentasikan **kondisi struktural jangka panjang**. Material lantai, atap, dan tembok atau kepemilikan alat listrik dan kepemilikan rumah jarang berubah seketika, dan sudah eksis pada saat ibu hamil (periode kehamilan/prenatal). 
+
+Oleh karena itu, fitur-fitur ini bertindak sebagai **proxy sosial-ekonomi** yang aman secara temporal, sangat stabil tanpa menggunakan variabel pasca-kelahiran anak (seperti asupan protein saat balita, pengeluaran popok, dsb).

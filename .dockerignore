@@ -1,0 +1,12 @@
+.git
+.gitignore
+.agent/
+venv/
+__pycache__/
+*.ipynb
+*.pyc
+notebook/
+Data/
+scripts/
+readme.md
+dockerfile

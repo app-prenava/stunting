@@ -1,0 +1,98 @@
+DATA DICTIONARY – FINAL DATASET (STEP 6)
+
+Dataset ini telah melalui proses preprocessing dan seluruh variabel telah ditransformasikan ke dalam bentuk numerik agar dapat digunakan dalam machine learning.
+
+
+1. VARIABEL ANAK
+
+child_gender
+Tipe: Binary (0/1)
+Deskripsi: Jenis kelamin anak
+- 1 = Laki-laki
+- 0 = Perempuan
+
+
+2. VARIABEL PENDIDIKAN & PEKERJAAN IBU
+
+mother_education_level
+Tipe: Ordinal (0–5)
+Deskripsi: Tingkat pendidikan ibu
+- 0 = Tidak sekolah
+- 1 = Sekolah dasar (SD)
+- 2 = Sekolah menengah pertama (SMP)
+- 3 = Sekolah menengah atas (SMA)
+- 4 = Diploma
+- 5 = Universitas
+
+mother_employment_status
+Tipe: Binary (0/1)
+Deskripsi: Status pekerjaan ibu
+- 1 = Bekerja
+- 0 = Tidak bekerja
+
+
+3. VARIABEL DEMOGRAFI IBU
+
+mother_age_at_birth
+Tipe: Continuous (float)
+Deskripsi: Usia ibu saat melahirkan anak (dalam tahun)
+
+is_teenage_mother
+Tipe: Binary (0/1)
+Deskripsi: Indikator apakah ibu termasuk remaja
+- 1 = Usia < 20 tahun
+- 0 = Usia ≥ 20 tahun
+
+is_high_risk_mother_age
+Tipe: Binary (0/1)
+Deskripsi: Indikator usia ibu berisiko tinggi
+- 1 = Usia < 18 tahun atau > 35 tahun
+- 0 = Selain itu
+
+
+4. VARIABEL SOSIO-EKONOMI
+
+has_delivery_insurance
+Tipe: Binary (0/1)
+Deskripsi: Kepemilikan asuransi saat proses persalinan
+- 1 = Memiliki asuransi
+- 0 = Tidak memiliki asuransi
+
+
+5. VARIABEL ANTENATAL CARE (ANC)
+
+Antenatal Care (ANC) adalah pelayanan kesehatan yang diterima ibu selama masa kehamilan.
+
+Variabel ini menggunakan one-hot encoding, di mana hanya satu kategori bernilai 1 pada setiap baris data.
+
+anc_clinic_midwife
+Tipe: Binary (0/1)
+Deskripsi: Ibu melakukan ANC di klinik atau bidan
+
+anc_hospital
+Tipe: Binary (0/1)
+Deskripsi: Ibu melakukan ANC di rumah sakit
+
+anc_traditional_other
+Tipe: Binary (0/1)
+Deskripsi: Ibu melakukan ANC di fasilitas non-medis (dukun/lainnya)
+
+anc_unknown
+Tipe: Binary (0/1)
+Deskripsi: Lokasi ANC tidak diketahui
+
+
+6. VARIABEL TARGET
+
+is_stunted
+Tipe: Binary (0/1)
+Deskripsi: Status stunting anak berdasarkan HAZ (Height-for-Age Z-score)
+- 1 = Stunted (HAZ < -2 SD)
+- 0 = Normal (HAZ ≥ -2 SD)
+
+
+CATATAN PENTING
+
+- Seluruh variabel telah dikonversi ke bentuk numerik agar kompatibel dengan algoritma machine learning
+- Dataset telah dibersihkan dari missing values dan outlier
+- Dataset siap digunakan untuk proses modeling machine learning

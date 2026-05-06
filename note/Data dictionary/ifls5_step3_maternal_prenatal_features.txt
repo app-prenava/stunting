@@ -1,0 +1,22 @@
+DATA DICTIONARY - IFLS5 (STEP 3: MATERNAL PRENATAL FEATURES)
+
+anc_location
+Deskripsi: Lokasi atau fasilitas layanan kesehatan terkait pemeriksaan/persalinan pada riwayat kehamilan anak target
+Sumber: ch19a
+Dataset: b4_ch1.dta
+Status: Use
+Catatan: dicocokkan menggunakan ch07_id agar sesuai dengan anak target
+
+delivery_insurance
+Deskripsi: Jenis pembiayaan/asuransi yang digunakan terkait proses persalinan
+Sumber: ch20gb
+Dataset: b4_ch1.dta
+Status: Optional
+Catatan: missing value tinggi, sehingga dipertimbangkan sebagai fitur opsional
+
+PIPELINE CONTEXT:
+Step 3:
+Menambahkan fitur maternal prenatal dari riwayat kehamilan ibu.
+
+Tujuan:
+Memperkaya dataset dengan variabel akses layanan kesehatan maternal yang sesuai dengan timeline kehamilan anak target.

@@ -1,0 +1,45 @@
+DATA DICTIONARY - IFLS5 (STEP 5b: STUNTING TARGET CLEANING)
+
+haz_score
+Deskripsi: Height-for-Age Z-score setelah cleaning
+Status: Cleaned
+Catatan:
+- Outlier biologis (< -6 atau > +6) telah dihapus
+- Mengikuti standar WHO untuk data antropometri
+
+is_stunted
+Deskripsi: Label stunting final untuk modeling
+Status: Final Target
+Catatan:
+- Tidak memiliki missing value
+- Digunakan sebagai target dalam supervised machine learning
+
+
+PIPELINE CONTEXT:
+Step 5b:
+Melakukan cleaning pada variabel target stunting.
+
+Tujuan:
+Menghasilkan dataset dengan label yang valid dan siap digunakan untuk training model.
+
+
+DATA CLEANING RULES:
+
+1. Drop missing target:
+   - haz_score = NaN
+   - is_stunted = NaN
+
+2. Remove biologically implausible values:
+   - haz_score < -6
+   - haz_score > +6
+
+
+Hasil Validasi:
+
+rows_before_cleaning: 5815  
+rows_after_cleaning: 5244  
+outliers_removed: 43  
+missing_removed: 528  
+
+Catatan:
+Dataset final bebas dari missing target dan outlier biologis, sehingga valid untuk machine learning.

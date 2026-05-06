@@ -1,0 +1,41 @@
+# Dataset Final (Single Source of Truth)
+
+**Nama File:** `Data/processed/dataset_final.csv`
+**Jumlah Baris Final:** 4.832 Anak
+**Jumlah Fitur (Prediktor):** 18 Fitur
+
+## Deskripsi
+Dataset ini merupakan *Single Source of Truth* yang mengintegrasikan berbagai sumber data IFLS5 ke dalam satu kesatuan tabel siap-pakai. Seluruh observasi yang memiliki kecacatan informasi fatal (pada fitur-fitur kritikal) telah didrop sehingga dataset bersih dari `NaN`/Missing values.
+
+## Target Variable
+- **is_stunted (int64):** (1) Jika Anak Stunted (HAZ-score < -2), (0) Jika Anak Normal (HAZ-score >= -2).
+
+## Prediktor Variables (All Numeric)
+
+| No | Fitur | Tipe | Deskripsi (Nilai) |
+|---|---|---|---|
+| 1 | `child_gender` | int64 | 1 = Laki-laki, 0 = Perempuan |
+| 2 | `mother_education_level` | int64 | Level edukasi Ibu: 0 (Tdk Sekolah) sampai 5 (Sarjana) |
+| 3 | `mother_employment_status` | int64 | 1 = Ibu Bekerja, 0 = Ibu Tidak Bekerja |
+| 4 | `mother_height_cm` | float64| Tinggi Ibu dalam centimeter (Pengukur Biologis/Genetik) |
+| 5 | `mother_age_at_birth` | float64| Usia valid Ibu saat persalinan |
+| 6 | `is_teenage_mother` | int64 | 1 = Usia persalinan di bawah 20 tahun, 0 = Tidak |
+| 7 | `is_high_risk_mother_age` | int64 | 1 = Persalinan risiko usia (< 18 atau > 35 th), 0 = Tidak |
+| 8 | `has_delivery_insurance` | int64 | 1 = Punya Asuransi Persalinan/Kesehatan, 0 = Tidak |
+| 9 | `anc_clinic_midwife` | int64 | 1 = Kontrol ke Bidan/Puskesmas, 0 = Tidak |
+| 10| `anc_hospital` | int64 | 1 = Kontrol ANC ke Rumah Sakit, 0 = Tidak |
+| 11| `anc_traditional_other` | int64 | 1 = Kontrol ANC ke Dukun Beranak/Lainnya, 0 = Tidak |
+| 12| `anc_unknown` | int64 | 1 = Lokasi ANC tidak diketahui, 0 = Diketahui |
+| 13| `improved_water` | float64| 1 = Air minum layak (PAM, Sumur, Kemasan), 0 = Tidak layak |
+| 14| `improved_sanitation` | float64| 1 = Toilet pribadi + septic tank, 0 = Jamban/Sungai/Umum |
+| 15| `home_ownership` | float64| 1 = Rumah milik sendiri, 0 = Sewa/Numpang |
+| 16| `has_electricity` | float64| 1 = Punya aliran listrik, 0 = Tidak punya |
+| 17| `has_refrigerator` | float64| 1 = Punya kulkas, 0 = Tidak |
+| 18| `has_tv` | float64| 1 = Punya TV, 0 = Tidak |
+
+## Validasi Kelayakan ML & Deployment
+Dataset ini dijamin aman secara metodologis untuk kasus **Prenatal Risk Prediction** dengan justifikasi:
+- Tidak memiliki *data leakage*. Variabel-variabel terlarang pasca kelahiran (`haz_score`, `child_weight`, `breastfeeding`, dsb.) telah dicegah dan dipotong di pipeline (*Banned columns check*).
+- Seluruh kolom bertipe numerik yang dapat langsung dimasukkan ke Random Forest, Logistic Regression, dan XGBoost.
+- Fitur *socioeconomic/household/asset* telah dipastikan merupakan fitur yang bersifat menetap di masa lalu (bukan instan) dan merepresentasikan kekuatan ekonomi rumah tangga secara aman.
+- Terkoneksi sempurna dengan *Endpoint* API `/predict` melalui arsitektur `Pydantic` yang dilatih langsung menggunakan skema kolom dari *dataset* ini.

@@ -1,0 +1,60 @@
+DATA PREPROCESSING NOTE
+
+Variabel maternal dipilih dari modul hh14_b4_dta (Individual Female Adult) berdasarkan relevansi terhadap faktor risiko stunting, khususnya kondisi ibu selama kehamilan dan status sosial ekonomi.
+
+
+----------------------------------------
+
+VARIABLE MAPPING
+
+ba6a → mother_marital_status  
+ba6b → mother_education_level  
+ba6c → mother_literacy_status  
+ba7 → mother_employment_status  
+ba8 → mother_work_activity  
+
+
+----------------------------------------
+
+DATA DICTIONARY - IFLS5 (STEP 2: MATERNAL FEATURES)
+
+mother_marital_status  
+Deskripsi: Status pernikahan ibu  
+Sumber: ba6a  
+Dataset: hh14_b4_dta (Book 4 – Individual Female Adult)  
+Referensi: Volume 8 – IFLS5_hh_codebooks  
+
+mother_education_level  
+Deskripsi: Tingkat pendidikan terakhir ibu  
+Sumber: ba6b  
+Dataset: hh14_b4_dta  
+Referensi: Volume 8 – IFLS5_hh_codebooks  
+
+mother_literacy_status  
+Deskripsi: Kemampuan membaca/menulis ibu  
+Sumber: ba6c  
+Dataset: hh14_b4_dta  
+Referensi: Volume 8 – IFLS5_hh_codebooks  
+
+mother_employment_status  
+Deskripsi: Status pekerjaan ibu  
+Sumber: ba7  
+Dataset: hh14_b4_dta  
+Referensi: Volume 8 – IFLS5_hh_codebooks  
+
+mother_work_activity  
+Deskripsi: Aktivitas kerja atau jenis pekerjaan ibu  
+Sumber: ba8  
+Dataset: hh14_b4_dta  
+Referensi: Volume 8 – IFLS5_hh_codebooks  
+
+
+----------------------------------------
+
+PIPELINE CONTEXT
+
+Step 2:
+Menambahkan variabel maternal dari modul B4 ke dalam dataset hasil merge anak dan ibu.
+
+Tujuan:
+Memperkaya dataset dengan faktor maternal yang berpengaruh terhadap risiko stunting, termasuk aspek pendidikan, pekerjaan, dan status sosial ibu.

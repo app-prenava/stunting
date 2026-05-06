@@ -1,0 +1,270 @@
+--- PREGNANCY ---
+b4_ch0.dta -> hhid14_9 : 001060004 | 001060000 | 001080003 | 001220000 | 001224100
+b4_ch0.dta -> pid14 : 1.0 | 7.0 | 2.0 | 25.0 | 8.0
+b4_ch0.dta -> ch00 : 3:New respondent | 1:Panel respondent with child listed at CH0A | 2:Panel respondent with no child listed at CH0A
+b4_ch0.dta -> ch01aa : 1:Yes | 3:No
+b4_ch0.dta -> ch01ab : 1.0 | 4.0 | 2.0 | 3.0 | 5.0
+b4_ch0.dta -> ch01ad : 1.0 | 4.0 | 2.0 | 3.0 | 5.0
+b4_ch0.dta -> ch01ae : 0.0 | 3.0 | 1.0 | 2.0 | 5.0
+b4_ch0.dta -> ch01acx : 3:No | 1:Yes
+b4_ch0.dta -> ch01ac : 0:No | 1:Yes
+b4_ch0.dta -> ch02a : 1.0 | 4.0 | 2.0 | 3.0 | 5.0
+b4_ch0.dta -> ch01ba : 5.0 | 9.0 | 7.0 | 0.0 | 6.0
+b4_ch0.dta -> ch01bb : 0.0 | 1.0 | 2.0 | 4.0 | 3.0
+b4_ch0.dta -> ch01bcx : 3:No | 1:Yes
+b4_ch0.dta -> ch01bc : 0:Not pregnant | 1:Pregnant
+b4_ch0.dta -> ch02b : 5.0 | 10.0 | 7.0 | 0.0 | 2.0
+b4_ch0.dta -> chp00x : 1:Yes | 3:No
+b4_ch0.dta -> ch03 : 5.0 | 10.0 | 7.0 | 1.0 | 2.0
+b4_ch0.dta -> chp03 : 1.0 | 2.0
+b4_ch0.dta -> ch11 : nan
+b4_ch0.dta -> ch42b : 3:No | 1:Yes | 9:Missing
+b4_ch0.dta -> bxn : 1.0 | 4.0 | 2.0 | 3.0 | 0.0
+b4_ch0.dta -> bx90x : 3:No => EP | 2:Yes
+b4_ch0.dta -> hhid14 : 0010651 | 0010600 | 0010851 | 0012200 | 0012241
+b4_ch0.dta -> pid : 1.0 | 7.0 | 2.0 | 25.0 | 8.0
+b4_ch0.dta -> pidlink : 001060004 | 001060007 | 001080012 | 001220002 | 001220011
+b4_ch0.dta -> version : 1.3
+b4_ch0.dta -> module : B4_CH0
+b4_ch1.dta -> hhid14_9 : 001060004 | 001060000 | 001080003 | 001220000 | 001224100
+b4_ch1.dta -> pid14 : 1.0 | 7.0 | 2.0 | 25.0 | 8.0
+b4_ch1.dta -> ch05 : 1.0 | 2.0 | 3.0 | 4.0 | 5.0
+b4_ch1.dta -> ch06 : 2:Live birth | 4:Miscarriage | 3:Still birth | 1:Is pregnant
+b4_ch1.dta -> ch06a : 3:No | 1:Yes
+b4_ch1.dta -> ch07_id : 51:Not Live in this HH | 3.0 | 52:Died | 4.0 | 8.0
+b4_ch1.dta -> ch08 : 1:Male | 3:Female
+b4_ch1.dta -> ch09x : 1:Date given | 8:Don't Know
+b4_ch1.dta -> ch09day : 22.0 | 21.0 | 98.0 | 9.0 | 17.0
+b4_ch1.dta -> ch09mth : 2:February | 6:June | 98:Don't know | 4:April | 11:November
+b4_ch1.dta -> ch09yr : 2008.0 | 2010.0 | 2012.0 | 2013.0 | 1990.0
+b4_ch1.dta -> ch10a : 98:Don't Know | 27.0 | 40.0 | 36.0 | 21.0
+b4_ch1.dta -> ch10b : 9998:Don't Know | 2003.0 | 2012.0 | 1996.0 | 2006.0
+b4_ch1.dta -> ch17 : 9.0 | 8.0 | 37.0 | 3.0 | 4.0
+b4_ch1.dta -> ch17x : 5:Months | 4:Weeks | 99:Missing
+b4_ch1.dta -> age : 7.0 | 5.0 | 3.0 | 2.0 | 0.0
+b4_ch1.dta -> hhid14 : 0010651 | 0010600 | 0010851 | 0012200 | 0012241
+b4_ch1.dta -> pidlink : 001060004 | 001060007 | 001080012 | 001220002 | 001220011
+b4_ch1.dta -> ch12 : 1:Pregnancy ended before 1995 | 3:Pregnancy ended after 1994
+b4_ch1.dta -> ch13 : 1:CH06=2 (live birth) | 3:CH06=1
+b4_ch1.dta -> ch14a :  | W | D | DG | G
+b4_ch1.dta -> ch14 : 3:No | 1:Yes | 8:Don't know | 9:Missing
+b4_ch1.dta -> ch15 :  | AV | A | F | G
+b4_ch1.dta -> ch15a :  | V | A | F | C
+b4_ch1.dta -> ch15anmx : 1.0 | 8.0 | 9.0
+b4_ch1.dta -> ch15aadx : 1.0 | 8.0 | 9.0
+b4_ch1.dta -> ch15alcx : 1.0 | 8.0 | 9.0
+b4_ch1.dta -> ch15aax : 3:Same | 1:Given | 8:Don't know | 9:Missing
+b4_ch1.dta -> ch15abx : 3:Same | 1:Given | 8:Don't know | 9:Missing
+b4_ch1.dta -> ch15acx : 3:Same | 1:Given | 8:Don't know | 9:Missing
+b4_ch1.dta -> ch15adx : 3:Same | 1:Given | 8:Don't know | 9:Missing
+b4_ch1.dta -> ch15ad : 12.0 | 31.0 | 14.0 | 21.0 | 36.0
+b4_ch1.dta -> ch15ac : 1.0 | 3.0 | 14.0 | 77.0 | 7.0
+b4_ch1.dta -> ch15ab : 62.0 | 91.0 | 32.0 | 34.0 | 30.0
+b4_ch1.dta -> ch15afas :  | 0012511 | 0019501 | W | 0022011
+b4_ch1.dta -> ch16a : 0.0 | 3.0 | 1.0 | 2.0 | 4.0
+b4_ch1.dta -> ch16bx : 1:Given | 6:Not yet in 2nd trimester | 9:Missing
+b4_ch1.dta -> ch16b : 3.0 | 2.0 | 1.0 | 0.0 | 98:Don't Know
+b4_ch1.dta -> ch16cx : 1:Given | 6:Not yet in 3rd trimester | 9:Missing
+b4_ch1.dta -> ch16c : 3.0 | 1.0 | 2.0 | 0.0 | 4.0
+b4_ch1.dta -> ch16da : 1:Yes | 3:No | 8:Don't know | 9:Missing
+b4_ch1.dta -> ch16db : 1:Yes | 3:No | 8:Don't know | 9:Missing
+b4_ch1.dta -> ch16dc : 1:Yes | 3:No | 8:Don't know | 9:Missing
+b4_ch1.dta -> ch16dd : 1:Yes | 3:No | 8:Don't know | 9:Missing
+b4_ch1.dta -> ch16de : 1:Yes | 3:No | 8:Don't know | 9:Missing
+b4_ch1.dta -> ch16df : 1:Yes | 3:No | 8:Don't know | 9:Missing
+b4_ch1.dta -> ch16dg : 1:Yes | 3:No | 8:Don't know | 9:Missing
+b4_ch1.dta -> ch16dh : 1:Yes | 3:No | 8:Don't know | 9:Missing
+b4_ch1.dta -> ch16e : 1:Yes | 3:No | 8:Don't know | 9:Missing
+b4_ch1.dta -> ch16f : 1:Yes | 3:No | 8:Don't know | 9:Missing
+b4_ch1.dta -> ch16gx : 1:Number given | 8:Don't Know | 9:Missing
+b4_ch1.dta -> ch16g : 150.0 | 100.0 | 40.0 | 50.0 | 30.0
+b4_ch1.dta -> ch18 : 3:CH06=2 or 3 | 2:CH06=4 | 1:CH06=1
+b4_ch1.dta -> ch18aa : 1:Accident | 6:Too tired/too much work | 95:Other | 2:Abort by doctor's suggestion | 4:Because of sick
+b4_ch1.dta -> ch18a : 3:No | 1:Yes | 8:Don't know
+b4_ch1.dta -> ch18b : 3:No | 1:Yes | 9:Missing
+b4_ch1.dta -> ch18c : 3:No | 1:Yes | 9:Missing
+b4_ch1.dta -> ch19 : 10:Family members house | 9:Own house | 7:Clinic/office of midwife | 1:Public hospital | 6:Clinic/office of physician
+b4_ch1.dta -> ch19a : 7:Clinic/office of midwife | 1:Public hospital | 6:Clinic/office of physician | 4:Community health center | 2:Private hospital
+b4_ch1.dta -> ch19anmx : 1.0 | 8.0 | 9.0
+b4_ch1.dta -> ch19aadx : 1.0 | 8.0 | 9.0
+b4_ch1.dta -> ch19alcx : 1.0 | 8.0 | 9.0
+b4_ch1.dta -> ch19aax : 1:Given | 8:Don't know | 3:Same as residence | 9:Missing
+b4_ch1.dta -> ch19abx : 1:Given | 3:Same as residence | 8:Don't know | 9:Missing
+b4_ch1.dta -> ch19acx : 3:Same as residence | 1:Given | 8:Don't know | 9:Missing
+b4_ch1.dta -> ch19adx : 3:Same as residence | 1:Given | 8:Don't know | 9:Missing
+b4_ch1.dta -> ch19ad : 12.0 | 31.0 | 14.0 | 21.0 | 36.0
+b4_ch1.dta -> ch19ac : 14.0 | 77.0 | 7.0 | 3.0 | 75.0
+b4_ch1.dta -> ch19ab : 32.0 | 34.0 | 30.0 | 50.0 | 130.0
+b4_ch1.dta -> ch19afas :  | 0022502 | W | 0022254 | 0039051
+b4_ch1.dta -> ch20 :  | H | W | B | E
+b4_ch1.dta -> ch20c :  | G | V | BC | BL
+b4_ch1.dta -> ch20gx : 1:Given | 8:Don't know | 9:Missing
+b4_ch1.dta -> ch20ga : 3:No =>CH2H | 1:Yes | 9:Missing
+b4_ch1.dta -> ch20gb : 10:Jampersal | 7:Jamkesmas | 3:Employer provided health benefits | 6:SKTM | 2:Jamsostek
+b4_ch1.dta -> ch20gcx : 8:Don't know | 1:Total cost
+b4_ch1.dta -> ch20gc :  | ___.__1.000.000 | ___.___.___.__0 | ___._10.000.000 | ___.___.400.000
+b4_ch1.dta -> ch20gd : 3:No => CH2H | 1:Yes
+b4_ch1.dta -> ch20gex : 1:Rupiah | 8:Don't know
+b4_ch1.dta -> ch20ge :  | ___.___.400.000 | ___.__7.000.000 | ___.__1.800.000 | ___.__4.000.000
+b4_ch1.dta -> ch20h : 1:Yes | 3:No | 9:Missing
+b4_ch1.dta -> ch21 : 1:CH06=2 (live birth) | 3:CH06=3
+b4_ch1.dta -> ch22 : 3:Similar | 4:Smaller | 0Bigger | 1:Much bigger | 98:Don't know
+b4_ch1.dta -> ch23 : 3:No | 1:Yes | 9:Missing
+b4_ch1.dta -> ch24 : 3.5 | 9.98 | 3.2 | 3.0 | 4.0
+b4_ch1.dta -> ch24a : 3:No | 1:Yes | 9:Missing
+b4_ch1.dta -> ch24cx : 1:Given | 96:Not yet fed | 88:Died before ever fed | 99:Missing
+b4_ch1.dta -> ch24c : 1.0 | 6.0 | 9.0 | 3.0 | 2.0
+b4_ch1.dta -> ch24c1 : 3:Days | 5:Months | 4:Weeks
+b4_ch1.dta -> ch24dx : 1:Given | 96:Not yet fed | 88:Died before ever fed | 99:Missing
+b4_ch1.dta -> ch24d : 2.0 | 10.0 | 6.0 | 5.0 | 4.0
+b4_ch1.dta -> ch24d1 : 5:Months | 4:Weeks | 3:Days
+b4_ch1.dta -> ch24ex : 5:Months | 96:Still breastfeeding | 88:Died while breastfeeding | 99:Missing
+b4_ch1.dta -> ch24e : 9.0 | 12.0 | 24.0 | 8.0 | 13.0
+b4_ch1.dta -> ch24f :  | Q | M | R | G
+b4_ch1.dta -> ch25 : 1:Yes | 3:No
+b4_ch1.dta -> ch26 : 1.0 | 17.0 | 3.0 | 12.0 | 4.0
+b4_ch1.dta -> ch26x : 3:Days | 4:Weeks | 5:Months | 6:Years
+b4_ch1.dta -> ch27x1 : 3:Child not listed in HH roster | 1:Child live in HH | 2:Child died/Not live in HH but listed in HH roster
+b4_ch1.dta -> ch27 : 3.0 | 4.0 | 8.0 | 9.0 | 10.0
+b4_ch1.dta -> ch27x : 3:New/Panel without child roster | 1:Panel with child roster
+b4_ch1.dta -> ch27b : 3:Alive not in HH | 1:Alive in HH | 5:Dead
+b4_ch1.dta -> ch28a : 3:No | 1:Yes
+b4_ch1.dta -> ch28b : 1:Yes | 3:No
+b4_ch1.dta -> ch29a : 3:No | 1:Yes
+b4_ch1.dta -> ch29b : 3:No
+b4_ch1.dta -> ch30a : 2:Married | 1:Single | 98:Don't know | 4:Divorced | 5:Widow/widower
+b4_ch1.dta -> ch31a : 61:University S1 | 6:Sr high vocational (SMK Kejuruan) | 5:Sr high general (SMU Umum) | 74:Madrasah Aliyah | 3:Jr high general (SMP Umum)
+b4_ch1.dta -> ch32a : 1 | 0:Did not complete St at that level | 96:No school | 7:Graduated | 2
+b4_ch1.dta -> ch32b : 1:Yes | 3:No | 6:NA
+b4_ch1.dta -> ch32c : 1:Yes | 3:No
+b4_ch1.dta -> ch32d : 3:Attending school | 1:Working/trying to get work/helping to earn income | 4:Housekeeping | 98:Don't know | 2:Job searching
+b4_ch1.dta -> ch33a : 3:In the same district | 1:In the same village | 12:North Sumatra | 4:In the same province | 31:Jakarta
+b4_ch1.dta -> ch34a : 3:Attending school | 1:Working/trying to get work/helping to earn income | 4:Housekeeping | 2:Job searching | 98:Don't know
+b4_ch1.dta -> ch35a : 4:Goverment worker/employee | 8:Freelancer in non-agriculture | 5:Private worker/employee | 1:Self employed | 6:Unpaid family worker
+b4_ch1.dta -> ch37a : 4:At least once a week | 5:Everyday | 2:At least once a year | 3:At least once a month | 1:Never
+b4_ch1.dta -> ch37b : 4:At least once a week | 1:Never | 5:Everyday | 3:At least once a month | 2:At least once a year
+b4_ch1.dta -> ch37c : 1:Never | 4:At least once a week | 5:Everyday | 3:At least once a month | 2:At least once a year
+b4_ch1.dta -> ch38a : 3:No | 1:Yes | 7:Unwilling to answer
+b4_ch1.dta -> ch39a :  | A | G | D | AD
+b4_ch1.dta -> ch39ag : 1.0 | 4.0 | 7.0 | 12.0 | 30.0
+b4_ch1.dta -> ch39agx : 3:Days | 5:Months
+b4_ch1.dta -> ch39ah : 2.0 | 12.0
+b4_ch1.dta -> ch39ahx : 5:Months
+b4_ch1.dta -> ch40a : 3:No | 1:Yes
+b4_ch1.dta -> ch41a :  | G | DG | D | A
+b4_ch1.dta -> ch41ag : 1.0 | 2.0 | 12.0 | 25.0 | 3.0
+b4_ch1.dta -> ch41agx : 3:Days | 5:Months
+b4_ch1.dta -> ch41ah : 7.0 | 1.0 | 30.0 | 2.0 | 3.0
+b4_ch1.dta -> ch41ahx : 3:Days | 5:Months
+b4_ch1.dta -> ch41av :  | ___._60.000 | ___.200.000
+b4_ch1.dta -> ch20g : 0.0 | 1000000.0 | 100000.0 | 200000.0 | 700000.0
+b4_ch1.dta -> ch39aa : 5000000.0 | 12000000.0 | 50000.0 | 1500000.0 | 100000.0
+b4_ch1.dta -> ch39ad : 10000.0 | 100000.0 | 200000.0 | 1000000.0 | 2000000.0
+b4_ch1.dta -> ch39av : 100000.0 | 5000000.0 | 280000.0
+b4_ch1.dta -> ch41aa : 1000000.0 | 100000.0 | 50000.0 | 4000000.0 | 200000.0
+b4_ch1.dta -> ch41ad : 200000.0 | 150000.0 | 100000.0 | 160000.0 | 80000.0
+b4_ch1.dta -> version : 1.3
+b4_ch1.dta -> module : B4_CH1
+b4_cx1.dta -> hhid14_9 : 001060004 | 001060000 | 001080003 | 001224100 | 001240005
+b4_cx1.dta -> pid14 : 1.0 | 7.0 | 2.0 | 25.0 | 8.0
+b4_cx1.dta -> cxtype : A | B | C | E | F
+b4_cx1.dta -> cx01 : 3:No | 1:Yes
+b4_cx1.dta -> cx02 : 3:No | 1:Yes
+b4_cx1.dta -> cx02ax : 1:Year given | 8:Don't know
+b4_cx1.dta -> cx02a : 2013.0 | 2014.0 | 2004.0 | 2015.0 | 1996.0
+b4_cx1.dta -> cx02b : 98:Don't know | 25.0 | 19.0 | 32.0 | 18.0
+b4_cx1.dta -> hhid14 : 0010651 | 0010600 | 0010851 | 0012241 | 0012451
+b4_cx1.dta -> pidlink : 001060004 | 001060007 | 001080012 | 001220011 | 001240005
+b4_cx1.dta -> version : 1.3
+b4_cx1.dta -> module : B4_CX1
+b4_cx2.dta -> hhid14_9 : 001060004 | 001060000 | 001080003 | 001220000 | 001224100
+b4_cx2.dta -> pid14 : 1.0 | 7.0 | 2.0 | 25.0 | 8.0
+b4_cx2.dta -> cx00 : 3:Age of respondent < 50 | 1:Age of respondent >= 50
+b4_cx2.dta -> cx20 : 1:Yes | 3:No | 8:Don't know
+b4_cx2.dta -> cx21 : 4:month injection | 1:Pills | 8:Norplant/Implant | 7:IUD/AKDR/Spiral | 2:month injection
+b4_cx2.dta -> cx21aax : 1:Enter date | 8:Don't know
+b4_cx2.dta -> cx21aamth : 8.0 | 9.0 | 5.0 | 98.0 | 12.0
+b4_cx2.dta -> cx21aayr : 2013.0 | 2014.0 | 2004.0 | 2012.0 | 2015.0
+b4_cx2.dta -> cx21ax : 1:Month and year given | 8:Don't know
+b4_cx2.dta -> cx21amth : 5.0 | 11.0 | 9.0 | 4.0 | 12.0
+b4_cx2.dta -> cx21ayr : 2015.0 | 2014.0 | 1999.0 | 2011.0 | 2013.0
+b4_cx2.dta -> cx21b : 12:Midwife | 11:Nurse/paramedic | 1:Public hospital | 3:Puskesmas | 2:Private hospital
+b4_cx2.dta -> cx21bcode : 12.0 | 11.0 | 1.0 | 3.0 | 2.0
+b4_cx2.dta -> cx21bnmx : 1.0 | 8.0
+b4_cx2.dta -> cx21badx : 1.0 | 8.0
+b4_cx2.dta -> cx21blcx : 8.0 | 1.0
+b4_cx2.dta -> cx21bax : 1:Given | 3:Same as residence | 8:Don't know
+b4_cx2.dta -> cx21bbx : 1:Given | 3:Same as residence | 8:Don't know
+b4_cx2.dta -> cx21bcx : 1:Given | 3:Same as residence | 8:Don't know
+b4_cx2.dta -> cx21bdx : 3:Same as residence | 1:Given | 8:Don't know
+b4_cx2.dta -> cx21bd : 12.0 | 31.0 | 15.0 | 14.0 | 36.0
+b4_cx2.dta -> cx21bc : 14.0 | 1.0 | 3.0 | 75.0 | 77.0
+b4_cx2.dta -> cx21bb : 10.0 | 70.0 | 62.0 | 91.0 | 32.0
+b4_cx2.dta -> cx21bfas : W |  | 0021250 | 0034250 | Y
+b4_cx2.dta -> cx21cx : 1:Given | 8:Don't know
+b4_cx2.dta -> cx21d : 3:No | 1:Yes | 2:Yes
+b4_cx2.dta -> cx21e : 1:Yes | 3:No
+b4_cx2.dta -> cx22a : 3:Never | 1:Ever | 8:Don't Know
+b4_cx2.dta -> cx22b : 3:Never | 1:Ever | 8:Don't Know
+b4_cx2.dta -> cx22c : 3:Never | 1:Ever | 8:Don't Know
+b4_cx2.dta -> cx22d : D |  | W | CDH | HV
+b4_cx2.dta -> cx22e : 3:No | 1:Yes
+b4_cx2.dta -> cx22fmth : 9.0 | 98.0 | 12.0 | 8.0 | 10.0
+b4_cx2.dta -> cx22fyr : 2014.0 | 9998:Don't know | 2013.0 | 2015.0 | 2011.0
+b4_cx2.dta -> cx22gnmx : 1.0 | 8.0
+b4_cx2.dta -> cx22gadx : 1.0 | 8.0
+b4_cx2.dta -> cx22glcx : 8.0 | 1.0
+b4_cx2.dta -> cx22gax : 1:Given | 3:Same as residence | 8:Don't know
+b4_cx2.dta -> cx22gbx : 3:Same as residence | 1:Given | 8:Don't know
+b4_cx2.dta -> cx22gcx : 3:Same as residence | 1:Given | 8:Don't know
+b4_cx2.dta -> cx22gdx : 3:Same as residence | 1:Given
+b4_cx2.dta -> cx22gd : 12.0 | 14.0 | 13.0 | 32.0 | 16.0
+b4_cx2.dta -> cx22gc : 1.0 | 14.0 | 77.0 | 6.0 | 22.0
+b4_cx2.dta -> cx22gb : 62.0 | 30.0 | 50.0 | 71.0 | 20.0
+b4_cx2.dta -> cx22gfas :  | 0019501 | 0029501 | W | 0033033
+b4_cx2.dta -> cx22h : 3:No | 1:Yes
+b4_cx2.dta -> cx22i : 1:Pill | 0Norplant/ Implant | 4:month injection | 2:month injection | 6:Condom
+b4_cx2.dta -> cx22j :  | D | V | HV | H
+b4_cx2.dta -> cx26 :  | X | B | B G | G Q
+b4_cx2.dta -> cx27 : 1:Yes | 3:No | 8:Don't know
+b4_cx2.dta -> cx28 : 4:month injection | 8:Norplant/Implant | 1:Pills | 7:IUD/AKDR/Spiral | 98:Other
+b4_cx2.dta -> hhid14 : 0010651 | 0010600 | 0010851 | 0012200 | 0012241
+b4_cx2.dta -> pidlink : 001060004 | 001060007 | 001080012 | 001220002 | 001220011
+b4_cx2.dta -> cx21c : 50000.0 | 25000.0 | 55000.0 | 20000.0 | 0.0
+b4_cx2.dta -> version : 1.3
+b4_cx2.dta -> module : B4_CX2
+
+--- HEALTH/EMPLOYMENT ---
+b4_ep1.dta -> hhid14_9 : 001060004 | 001060000 | 001080003 | 001220000 | 001224100
+b4_ep1.dta -> pid14 : 1.0 | 7.0 | 2.0 | 25.0 | 8.0
+b4_ep1.dta -> ep02 : 3:No | 1:Yes
+b4_ep1.dta -> ep03 : 1:Yes | 3:No
+b4_ep1.dta -> ep04 : 2.0 | 3.0 | 5.0 | 4.0 | 6.0
+b4_ep1.dta -> ep19x : 3:No => CX | 2:Yes
+b4_ep1.dta -> hhid14 : 0010651 | 0010600 | 0010851 | 0012200 | 0012241
+b4_ep1.dta -> pidlink : 001060004 | 001060007 | 001080012 | 001220002 | 001220011
+b4_ep1.dta -> version : 1.3
+b4_ep1.dta -> module : B4_EP1
+b4_ep2.dta -> hhid14_9 : 001060004 | 001060000 | 001080003 | 001220000 | 001224100
+b4_ep2.dta -> pid14 : 1.0 | 7.0 | 2.0 | 25.0 | 8.0
+b4_ep2.dta -> ep05 : 1.0 | 2.0 | 3.0 | 4.0 | 5.0
+b4_ep2.dta -> ep06 : 96 | 08 | 09 | 001060004 | 03
+b4_ep2.dta -> ep07 : 96:NA | 4.0 | 5.0 | 8.0 | 9.0
+b4_ep2.dta -> ep07a : 96:NA | 4.0 | 1.0 | 2.0 | 9.0
+b4_ep2.dta -> ep09x : 1:Biological Child | 2:Step child | 3:Adopted child | 6:Duplicates | 7:Not a child
+b4_ep2.dta -> ep09 : 2.0 | 3.0 | 1.0 | 5.0 | 4.0
+b4_ep2.dta -> ep10 : 1:Male | 3:Female
+b4_ep2.dta -> ep11a : 14.0 | 99:Missing | 5.0 | 3.0 | 4.0
+b4_ep2.dta -> ep11 : 7.0 | 16.0 | 12.0 | 29.0 | 14.0
+b4_ep2.dta -> ep12 : 1:Yes | 3:No | 8:Don't know
+b4_ep2.dta -> ep13 : 1:Yes | 3:No
+b4_ep2.dta -> ep14 : 3:No | 1:Yes
+b4_ep2.dta -> ep15 : 1:Yes | 3:No
+b4_ep2.dta -> ep16 : 6:Vocational shigh (SMK) | 1:Unschooled | 3:General jhigh | 2:Grade school | 61:University S1
+b4_ep2.dta -> ep17 : 7:Graduated | 96:No school | 98:Don't know | 5 | 1
+b4_ep2.dta -> ep18 : 2:Better | 9:Missing | 3:Same | 1:Much better | 4:Worst
+b4_ep2.dta -> ep19 : 2:Better | 9:Missing | 3:Same | 1:Much better | 4:Worst
+b4_ep2.dta -> hhid14 : 0010651 | 0010600 | 0010851 | 0012200 | 0012241
+b4_ep2.dta -> pidlink : 001060004 | 001060007 | 001080012 | 001220002 | 001220011
+b4_ep2.dta -> version : 1.3
+b4_ep2.dta -> module : B4_EP2

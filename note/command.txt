@@ -1,0 +1,353 @@
+PROJECT: Prediksi Dini Risiko Stunting (IFLS5)
+
+ENV SETUP:
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+
+VALIDASI STRUKTUR FOLDER:
+ls
+ls Data
+ls Data/raw
+ls Data/processed
+ls src
+
+
+VALIDASI FILE RAW YANG DIBUTUHKAN:
+ls Data/raw/hh14_b5_dta.zip
+ls Data/raw/hh14_bk_dta.zip
+ls Data/raw/hh14_b4_dta.zip
+ls Data/raw/hh14_b3a_dta.zip
+ls Data/raw/hh14_b1_dta.zip
+ls Data/raw/hh14_b2_dta.zip
+ls Data/raw/hh14_bus_dta.zip
+
+
+PIPELINE:
+
+
+STEP 1:
+Merge data anak dan ibu menggunakan:
+- b5_cov.dta (data anak)
+- bk_ar1.dta (household roster)
+- b4_cov.dta (data ibu)
+
+Output:
+Data/processed/01_child_mother_merged.csv
+
+Tujuan:
+Menghubungkan data anak dengan karakteristik maternal sebagai dasar analisis faktor risiko stunting.
+
+RUN:
+python src/01_merge_child_mother.py
+
+VALIDASI OUTPUT STEP 1:
+python - <<'PY'
+import pandas as pd
+df = pd.read_csv("Data/processed/01_child_mother_merged.csv")
+print(df.shape)
+print(df.columns.tolist())
+print(df.head())
+print(df.isna().sum())
+PY
+
+
+STEP 2:
+Inventory variabel maternal dari Book 4.
+
+Input:
+- hh14_b4_dta.zip
+
+Output:
+Data/processed/02_maternal_variable_inventory.csv
+
+Tujuan:
+Mengeksplorasi seluruh variabel pada modul B4 sebelum memilih fitur maternal.
+
+RUN:
+python src/02_inventory_maternal_variables.py
+
+VALIDASI OUTPUT STEP 2:
+python - <<'PY'
+import pandas as pd
+df = pd.read_csv("Data/processed/02_maternal_variable_inventory.csv")
+print(df.shape)
+print(df.head())
+print(df["source_file"].value_counts())
+print(df[["source_file", "column_name", "missing_percentage", "sample_values"]].head(30))
+PY
+
+
+STEP 3:
+Merge fitur maternal prenatal dari riwayat kehamilan.
+
+Input:
+Data/processed/01_child_mother_merged.csv
+
+Sumber:
+- b4_ch1.dta dari hh14_b4_dta.zip
+
+Fitur:
+- anc_location
+- delivery_insurance
+
+Output:
+Data/processed/03_child_mother_maternal_features.csv
+
+Tujuan:
+Menambahkan fitur akses layanan kesehatan maternal yang sesuai dengan timeline kehamilan anak target.
+
+RUN:
+python src/03_merge_maternal_features.py
+
+VALIDASI OUTPUT STEP 3:
+python - <<'PY'
+import pandas as pd
+df = pd.read_csv("Data/processed/03_child_mother_maternal_features.csv")
+print(df.shape)
+print(df.columns.tolist())
+print(df[["anc_location", "delivery_insurance"]].isna().sum())
+print(df[["anc_location", "delivery_insurance"]].head(20))
+PY
+
+
+STEP 4:
+Merge fitur sosioekonomi ibu dari Book 3A.
+
+Input:
+Data/processed/03_child_mother_maternal_features.csv
+
+Sumber:
+- hh14_b3a_dta.zip
+
+Fitur target:
+- mother_education_level
+- mother_employment_status
+
+Output:
+Data/processed/04_child_mother_final_features.csv
+
+Tujuan:
+Menambahkan faktor sosioekonomi ibu yang penting untuk prediksi risiko stunting.
+
+RUN:
+python src/04_merge_mother_socioeconomic_features.py
+
+VALIDASI OUTPUT STEP 4:
+python - <<'PY'
+import pandas as pd
+df = pd.read_csv("Data/processed/04_child_mother_final_features.csv")
+print(df.shape)
+print(df.columns.tolist())
+cols = ["mother_education_level", "mother_employment_status"]
+available = [c for c in cols if c in df.columns]
+print(df[available].isna().sum())
+print(df[available].head(20))
+PY
+
+
+VALIDASI JUMLAH BARIS ANTAR STEP:
+python - <<'PY'
+import pandas as pd
+
+files = [
+    "Data/processed/01_child_mother_merged.csv",
+    "Data/processed/03_child_mother_maternal_features.csv",
+    "Data/processed/04_child_mother_final_features.csv",
+]
+
+for f in files:
+    df = pd.read_csv(f)
+    print(f, df.shape)
+PY
+
+
+VALIDASI KOLOM PENTING DATASET FINAL:
+python - <<'PY'
+import pandas as pd
+
+df = pd.read_csv("Data/processed/04_child_mother_final_features.csv")
+
+expected_cols = [
+    "household_id",
+    "child_id",
+    "child_unique_id",
+    "child_age",
+    "child_gender",
+    "mother_pid14",
+    "mother_pidlink",
+    "mother_age",
+    "anc_location",
+    "delivery_insurance",
+    "mother_education_level",
+    "mother_employment_status",
+]
+
+missing = [c for c in expected_cols if c not in df.columns]
+print("missing columns:", missing)
+print("available expected columns:", [c for c in expected_cols if c in df.columns])
+PY
+
+STEP 5A:
+Konstruksi label stunting (target variable) dari data antropometri.
+
+Input:
+Data/processed/04_child_mother_final_features.csv
+
+Sumber:
+- b5_cov.dta (DOB anak)
+- b5_time.dta (tanggal wawancara)
+- bus_us.dta (tinggi badan anak)
+
+Output:
+Data/processed/05a_child_mother_with_stunting_label_raw.csv
+
+Tujuan:
+Membangun variabel target:
+- haz_score (Height-for-Age Z-score)
+- is_stunted (1 jika HAZ < -2)
+
+RUN:
+python src/05a_construct_stunting_target.py
+
+VALIDASI OUTPUT STEP 5A:
+python - <<'PY'
+import pandas as pd
+
+df = pd.read_csv("Data/processed/05a_child_mother_with_stunting_label_raw.csv")
+
+print(df.shape)
+print(df[["haz_score", "is_stunted"]].describe())
+print("missing haz_score:", df["haz_score"].isna().sum())
+print("missing is_stunted:", df["is_stunted"].isna().sum())
+print(df[["haz_score", "is_stunted"]].head())
+PY
+
+
+STEP 5B:
+Cleaning target stunting sesuai standar WHO.
+
+Input:
+Data/processed/05a_child_mother_with_stunting_label_raw.csv
+
+Output:
+Data/processed/05b_child_mother_stunting_cleaned.csv
+
+Tujuan:
+- Drop missing target
+- Remove outlier HAZ (< -6 atau > 6)
+- Validasi epidemiologi
+
+RUN:
+python src/05b_clean_stunting_target.py
+
+VALIDASI OUTPUT STEP 5B:
+python - <<'PY'
+import pandas as pd
+
+df = pd.read_csv("Data/processed/05b_child_mother_stunting_cleaned.csv")
+
+print(df.shape)
+print("missing haz_score:", df["haz_score"].isna().sum())
+print("missing is_stunted:", df["is_stunted"].isna().sum())
+
+stunted = (df["is_stunted"] == 1).sum()
+normal = (df["is_stunted"] == 0).sum()
+
+print("stunted:", stunted)
+print("normal:", normal)
+print("prevalence:", stunted / len(df) * 100)
+PY
+
+
+STEP 6:
+Data preprocessing & feature engineering untuk machine learning.
+
+Input:
+Data/processed/05b_child_mother_stunting_cleaned.csv
+
+Output:
+Data/processed/06_ml_ready_dataset.csv
+
+Tujuan:
+- Membersihkan kategori IFLS (98, 99, dll)
+- Encoding fitur kategorikal
+- Membuat fitur turunan:
+  - mother_age_at_birth
+  - is_teenage_mother
+  - is_high_risk_mother_age
+- Menghapus kolom ID dan kolom leakage
+- Menghasilkan dataset numerik siap modeling
+
+RUN:
+python src/06_feature_engineering.py
+
+VALIDASI OUTPUT STEP 6:
+python - <<'PY'
+import pandas as pd
+
+df = pd.read_csv("Data/processed/06_ml_ready_dataset.csv")
+
+print("shape:", df.shape)
+print("columns:", df.columns.tolist())
+
+print("\nmissing per column:")
+print(df.isna().sum())
+
+print("\ndtypes:")
+print(df.dtypes)
+
+print("\ncek target:")
+print(df["is_stunted"].value_counts(normalize=True))
+
+print("\nsample:")
+print(df.head())
+PY
+
+
+VALIDASI FINAL (READY FOR MODELING):
+python - <<'PY'
+import pandas as pd
+
+df = pd.read_csv("Data/processed/06_ml_ready_dataset.csv")
+
+# 1. Tidak ada kolom ID
+id_cols = ["household_id", "child_id", "mother_pidlink"]
+print("ID columns present:", [c for c in id_cols if c in df.columns])
+
+# 2. Tidak ada leakage
+leak_cols = ["haz_score", "height_cm"]
+print("Leakage columns present:", [c for c in leak_cols if c in df.columns])
+
+# 3. Target valid
+print("target unique:", df["is_stunted"].unique())
+
+# 4. Semua numerik
+non_numeric = df.select_dtypes(exclude=["int64", "float64"]).columns
+print("non-numeric columns:", list(non_numeric))
+
+# 5. Missing check
+print("total missing:", df.isna().sum().sum())
+
+print("\nDataset READY for Step 7 (Modeling)")
+PY
+
+CATATAN METODOLOGIS:
+
+Pipeline ini terdiri dari:
+- Step 1–4: Data integration & feature construction (Data Understanding + Data Preparation)
+- Step 5: Target construction (label engineering)
+- Step 6: ML preprocessing (feature engineering & encoding)
+
+Output akhir Step 6:
+Dataset numerik tanpa leakage, siap digunakan untuk supervised machine learning.
+
+Distribusi target (~32% stunted):
+- Tidak termasuk severe imbalance
+- Tidak memerlukan SMOTE pada tahap awal
+- Akan ditangani di modeling menggunakan:
+  - class_weight
+  - evaluation metrics (recall, F1-score)
+
+  RAW DATA → CLEAN DATA → ML READY DATA

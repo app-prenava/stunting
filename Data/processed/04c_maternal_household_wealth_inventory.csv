@@ -1,0 +1,8 @@
+source_file,column_name,dtype,missing_count,missing_percentage,sample_values,candidate_feature,status,notes
+b2_kr,home_ownership,float64,54,0.93,"{1.0: 3888, 0.0: 1873}",home_ownership,Accepted,Kept as separate binary feature
+b2_kr,has_electricity,float64,54,0.93,"{1.0: 5709, 0.0: 52}",has_electricity,Accepted,Kept as separate binary feature
+b2_kr,has_refrigerator,float64,54,0.93,"{0.0: 3168, 1.0: 2593}",has_refrigerator,Accepted,Kept as separate binary feature
+b2_kr,has_tv,float64,54,0.93,"{1.0: 5307, 0.0: 454}",has_tv,Accepted,Kept as separate binary feature
+bk_krk,quality_floor,object,3,0.05,"{1: 5055, 0: 757}",quality_floor,Accepted,Kept as separate binary feature
+bk_krk,quality_wall,object,47,0.81,"{1: 4547, 0: 1221}",quality_wall,Accepted,Kept as separate binary feature
+bk_krk,quality_roof,object,24,0.41,"{1: 5681, 0: 110}",quality_roof,Accepted,Kept as separate binary feature

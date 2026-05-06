@@ -1,0 +1,77 @@
+DATA DICTIONARY - IFLS5 (STEP 5: STUNTING TARGET CONSTRUCTION)
+
+age_in_months
+Deskripsi: Usia anak dalam bulan (perhitungan presisi)
+Sumber: dob_mth, dob_yr, ivwmth, ivwyr
+Dataset: b5_cov.dta + b5_time.dta
+Referensi: Volume 4 / 6 – IFLS5_HH_PQX_Public
+Status: Derived
+Catatan:
+Digunakan untuk menghitung usia anak secara presisi dalam bulan, yang diperlukan untuk perhitungan HAZ (Height-for-Age Z-score).
+
+height_cm
+Deskripsi: Tinggi badan anak dalam sentimeter
+Sumber: us04
+Dataset: bus_us.dta (Anthropometry)
+Referensi: IFLS5 Anthropometry Documentation
+Status: Use
+Catatan:
+Telah dikoreksi berdasarkan posisi pengukuran (standing vs recumbent) sesuai standar WHO.
+
+haz_score
+Deskripsi: Height-for-Age Z-score (indikator stunting WHO)
+Sumber: hasil perhitungan dari height_cm dan age_in_months menggunakan standar WHO 2006
+Dataset: Derived
+Referensi: WHO Child Growth Standards (2006)
+Status: Derived
+Catatan:
+Dihitung menggunakan formula LMS WHO.
+Untuk indikator Height-for-Age, nilai L = 1 sehingga:
+Z = (X - M) / (M * S)
+
+is_stunted
+Deskripsi: Status stunting anak
+Sumber: hasil klasifikasi dari haz_score
+Dataset: Derived
+Referensi: WHO Child Growth Standards
+Status: Use (Target Variable)
+Catatan:
+- 1 = Stunted (HAZ < -2 SD)
+- 0 = Normal (HAZ ≥ -2 SD)
+
+
+PIPELINE CONTEXT:
+Step 5:
+Menghitung indikator stunting berdasarkan data antropometri anak.
+
+Tujuan:
+Membangun variabel target (label) untuk supervised machine learning dalam prediksi risiko stunting.
+
+
+VARIABLE MAPPING
+
+(dob_mth, dob_yr, ivwmth, ivwyr) → age_in_months  
+us04 → height_cm  
+(height_cm + age_in_months) → haz_score  
+haz_score → is_stunted  
+
+
+VALIDATION NOTE:
+
+- Missing value pada haz_score (528 anak) disebabkan oleh:
+  - Tidak tersedia data tinggi badan
+  - Tidak tersedia data usia presisi
+- Outlier biologis (HAZ < -6 atau > +6) diidentifikasi sesuai standar WHO
+- Data cleaning dilakukan pada tahap berikutnya (Step 5b)
+
+
+Hasil Validasi:
+
+rows_before: 5815  
+rows_after: 5815  
+haz_score available: 5287  
+haz_score missing: 528  
+
+Catatan:
+Dataset masih mengandung missing dan outlier pada tahap ini. 
+Proses cleaning dilakukan pada Step 5b sebelum digunakan untuk modeling.

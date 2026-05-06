@@ -1,0 +1,576 @@
+source_file,column_name,dtype,missing_count,missing_percentage,sample_values,status
+b4_ba6.dta,hhid14_9,object,0,0.0,001220000 | 001250000 | 002040000 | 002044100 | 002060000,needs_codebook_validation
+b4_ba6.dta,pid14,float64,0,0.0,2.0 | 8.0 | 3.0 | 6.0 | 5.0,needs_codebook_validation
+b4_ba6.dta,ba63a,float64,0,0.0,1.0 | 2.0 | 3.0 | 4.0 | 5.0,needs_codebook_validation
+b4_ba6.dta,baar00,category,18619,100.0,,needs_codebook_validation
+b4_ba6.dta,ba63cx,category,0,0.0,1:Biological | 6:Duplicate | 2:Step | 3:Adopted | 7:Not child,needs_codebook_validation
+b4_ba6.dta,ba63c,float64,17415,93.53,4.0 | 5.0 | 1.0 | 3.0 | 7.0,needs_codebook_validation
+b4_ba6.dta,ba64,category,1340,7.2,1:Male | 3:Female,needs_codebook_validation
+b4_ba6.dta,ba64a,category,6140,32.98,27.0 | 25.0 | 23.0 | 14.0 | 99:Missing,needs_codebook_validation
+b4_ba6.dta,ba64bx,category,1340,7.2,1:Preprinted | 8:New,needs_codebook_validation
+b4_ba6.dta,ba64bmt,float64,1743,9.36,9.0 | 4.0 | 11.0 | 12.0 | 10.0,needs_codebook_validation
+b4_ba6.dta,ba64byr,float64,1743,9.36,1980.0 | 1982.0 | 1984.0 | 1993.0 | 1990.0,needs_codebook_validation
+b4_ba6.dta,ba64c,category,1743,9.36,3:No | 1:Yes,needs_codebook_validation
+b4_ba6.dta,ba65,category,11760,63.16,1:Yes | 3:No | 8:Don't know,needs_codebook_validation
+b4_ba6.dta,ba65ax,category,18169,97.58,8:Don't know | 1:Month given,needs_codebook_validation
+b4_ba6.dta,ba65mt,float64,18227,97.89,98.0 | 9.0 | 8.0 | 6.0 | 10.0,needs_codebook_validation
+b4_ba6.dta,ba65ayr,float64,18227,97.89,2002.0 | 2011.0 | 2010.0 | 2000.0 | 2006.0,needs_codebook_validation
+b4_ba6.dta,ba66x,category,11760,63.16,1:Given | 8:Don't know,needs_codebook_validation
+b4_ba6.dta,ba66,float64,11909,63.96,34.0 | 32.0 | 30.0 | 21.0 | 24.0,needs_codebook_validation
+b4_ba6.dta,ba66a,category,11909,63.96,1:Yes | 3:No,needs_codebook_validation
+b4_ba6.dta,ba67,category,12445,66.84,2:Married | 1:Unmarried | 5:Widow/widower | 8:Don't know | 4:Divorced,needs_codebook_validation
+b4_ba6.dta,ba68,category,12445,66.84,"61:University S1 | 2:Grade school | 3:General jhigh | 6:Vocational shigh (SMK) | 60:Diploma (D1,D2,D3)",needs_codebook_validation
+b4_ba6.dta,ba69,category,12445,66.84,3 | 2 | 7:Graduated | 1 | 0:Did not complete St grade at this level,needs_codebook_validation
+b4_ba6.dta,ba70,category,12445,66.84,1:In the same village | 4:In the same province | 14:Riau | 31:Jakarta | 13:West Sumatra,needs_codebook_validation
+b4_ba6.dta,ba78,category,12565,67.48,1:Yes | 3:No | 6:Not applicable | 8:Don't know,needs_codebook_validation
+b4_ba6.dta,ba79,category,12565,67.48,1:With father and mother | 4:Not with father and mother | 3:With mother only | 2:With father only,needs_codebook_validation
+b4_ba6.dta,ba80,category,12565,67.48,1:Working/trying to get work/helping to earn income | 3:Attending school | 4:Housekeeping | 2:Job searching | 95:Don't know,needs_codebook_validation
+b4_ba6.dta,ba81,category,14901,80.03,4:Government worker/employee | 6:Unpaid family worker | 5:Private worker/employee | 2:Self employed assisted by unreguler workers | 1:Self-employed,needs_codebook_validation
+b4_ba6.dta,ba83a,category,12565,67.48,1:Still alive | 8:Don't know | 5:Has died more then 1months ago | 3:Has died in the last 1months,needs_codebook_validation
+b4_ba6.dta,ba84,category,12635,67.86,5:Everyday | 2:At least once a year | 3:At least once a month | 1:Never | 4:At least once a week,needs_codebook_validation
+b4_ba6.dta,ba84a,category,14166,76.08,3:At least once a month | 1:Never | 4:At least once a week | 5:Everyday | 2:At least once a year,needs_codebook_validation
+b4_ba6.dta,ba84b,category,14846,79.74,1:Never | 4:At least once a week | 3:At least once a month | 5:Everyday | 2:At least once a year,needs_codebook_validation
+b4_ba6.dta,ba87a,category,12635,67.86,3:No | 1:Yes | 7:Unwilling to answer,needs_codebook_validation
+b4_ba6.dta,ba88,object,0,0.0, | G | A | D | H,needs_codebook_validation
+b4_ba6.dta,ba88g1,category,18292,98.24,2.0 | 5.0 | 40.0 | 1.0 | 6.0,needs_codebook_validation
+b4_ba6.dta,ba88g2,category,18292,98.24,3:Days | 5:Months,needs_codebook_validation
+b4_ba6.dta,ba88h1,category,18590,99.84,7.0 | 3.0 | 1.0 | 4.0 | 6.0,needs_codebook_validation
+b4_ba6.dta,ba88h2,category,18590,99.84,3:Days | 5:Months,needs_codebook_validation
+b4_ba6.dta,ba89a,category,12635,67.86,3:No | 1:Yes | 7:Unwilling to answer,needs_codebook_validation
+b4_ba6.dta,ba90,object,0,0.0, | G | H | A | AD,needs_codebook_validation
+b4_ba6.dta,ba90g1,category,18133,97.39,1.0 | 7.0 | 108.0 | 48.0 | 2.0,needs_codebook_validation
+b4_ba6.dta,ba90g2,category,18133,97.39,3:Days | 5:Months,needs_codebook_validation
+b4_ba6.dta,ba90h1,category,18509,99.41,2.0 | 7.0 | 1.0 | 88.0 | 365.0,needs_codebook_validation
+b4_ba6.dta,ba90h2,category,18509,99.41,5:Months | 3:Days,needs_codebook_validation
+b4_ba6.dta,hhid14,object,0,0.0,0012200 | 0012500 | 0020400 | 0020441 | 0020600,needs_codebook_validation
+b4_ba6.dta,pidlink,object,0,0.0,001220002 | 001250008 | 002040002 | 002040003 | 002060006,needs_codebook_validation
+b4_ba6.dta,ba88a,float64,16494,88.59,5500000.0 | 500000.0 | 1000000.0 | 1500000.0 | 300000.0,needs_codebook_validation
+b4_ba6.dta,ba88d,float64,17076,91.71,70000.0 | 200000.0 | 300000.0 | 100000.0 | 1000000.0,needs_codebook_validation
+b4_ba6.dta,ba88v,float64,18614,99.97,7000000.0 | 750000.0 | 100000.0 | 6000000.0 | 280000.0,needs_codebook_validation
+b4_ba6.dta,ba90a,float64,15820,84.97,1000000.0 | 500000.0 | 700000.0 | 50000.0 | 200000.0,needs_codebook_validation
+b4_ba6.dta,ba90d,float64,17079,91.73,300000.0 | 20000.0 | 200000.0 | 150000.0 | 100000.0,needs_codebook_validation
+b4_ba6.dta,ba90v,float64,18613,99.97,35000.0 | 100000.0 | 400000.0 | 700000.0 | 200000.0,needs_codebook_validation
+b4_ba6.dta,ba00a,category,0,0.0,1:RESPONDENT HAS A CHILD ROSTER FOR BOOK4,needs_codebook_validation
+b4_ba6.dta,ba63n,float64,0,0.0,10.0 | 2.0 | 7.0 | 3.0 | 6.0,needs_codebook_validation
+b4_ba6.dta,ba90x,category,0,0.0,2:Yes | 3:No,needs_codebook_validation
+b4_ba6.dta,version,float64,0,0.0,1.3,needs_codebook_validation
+b4_ba6.dta,module,object,0,0.0,B4_BA6,needs_codebook_validation
+b4_bf.dta,hhid14_9,object,0,0.0,001060004 | 001060000 | 001080003 | 001220000 | 001224100,needs_codebook_validation
+b4_bf.dta,pid14,float64,0,0.0,1.0 | 7.0 | 2.0 | 25.0 | 8.0,needs_codebook_validation
+b4_bf.dta,bf00,category,0,0.0,3:New respondent | 1:Panel with child listed at CH0A | 2:Panel with no child listed at CH0A,needs_codebook_validation
+b4_bf.dta,bf02,category,5374,44.09,12.0 | 4.0 | 8.0 | 10.0 | 15.0,needs_codebook_validation
+b4_bf.dta,bf03,category,5374,44.09,1:Yes | 3:No,needs_codebook_validation
+b4_bf.dta,bf04,category,9090,74.58,1:Yes | 3:No | 9:Missing,needs_codebook_validation
+b4_bf.dta,bf05x,category,9245,75.85,1:Given | 88:Died before ever fed | 99:Missing | 96:Not yet fed,needs_codebook_validation
+b4_bf.dta,bf05,category,9278,76.12,1.0 | 3.0 | 5.0 | 2.0 | 4.0,needs_codebook_validation
+b4_bf.dta,bf051,category,9278,76.12,3:Days | 5:Months | 4:Weeks,needs_codebook_validation
+b4_bf.dta,bf06x,category,9245,75.85,1:Given | 88:Died before ever fed | 96:Not yet fed | 99:Missing,needs_codebook_validation
+b4_bf.dta,bf06,category,9297,76.28,4.0 | 3.0 | 9.0 | 1.0 | 6.0,needs_codebook_validation
+b4_bf.dta,bf061,category,9297,76.28,5:Months | 4:Weeks | 3:Days,needs_codebook_validation
+b4_bf.dta,bf07x,category,9245,75.85,5:Months | 96:Still breastfeeding | 88:Died while breastfeeding | 99:Missing,needs_codebook_validation
+b4_bf.dta,bf07,category,9307,76.36,17.0 | 3.0 | 12.0 | 13.0 | 20.0,needs_codebook_validation
+b4_bf.dta,bf08,object,0,0.0, | V | Q | G | R,needs_codebook_validation
+b4_bf.dta,bf09,float64,0,0.0,6.0 | 1.0 | 9.0 | 5.0 | 4.0,needs_codebook_validation
+b4_bf.dta,bf09x,category,0,0.0,5:Months | 4:Weeks | 3:Days | 99:Missing,needs_codebook_validation
+b4_bf.dta,hhid14,object,0,0.0,0010651 | 0010600 | 0010851 | 0012200 | 0012241,needs_codebook_validation
+b4_bf.dta,pidlink,object,0,0.0,001060004 | 001060007 | 001080012 | 001220002 | 001220011,needs_codebook_validation
+b4_bf.dta,version,float64,0,0.0,1.3,needs_codebook_validation
+b4_bf.dta,module,object,0,0.0,B4_BF,needs_codebook_validation
+b4_br.dta,hhid14_9,object,0,0.0,001060004 | 001060000 | 001080003 | 001220000 | 001224100,needs_codebook_validation
+b4_br.dta,pid14,float64,0,0.0,1.0 | 7.0 | 2.0 | 25.0 | 8.0,needs_codebook_validation
+b4_br.dta,br00x,category,0,0.0,3:New respondent | 1:Panel Respondent,needs_codebook_validation
+b4_br.dta,br00a,category,4301,34.48,1:Has child roster and a child listed at CH00a | 3:No child roster | 2:Has child roster and no child listed at CH00a,needs_codebook_validation
+b4_br.dta,br01,category,6067,48.64,1:Yes | 3:No,needs_codebook_validation
+b4_br.dta,br02,category,7003,56.14,1:Yes | 3:No,needs_codebook_validation
+b4_br.dta,br03,float64,7408,59.39,0.0 | 2.0 | 3.0 | 1.0 | 4.0,needs_codebook_validation
+b4_br.dta,br04,float64,7408,59.39,2.0 | 3.0 | 1.0 | 0.0 | 4.0,needs_codebook_validation
+b4_br.dta,br05,category,7003,56.14,1:Yes | 3:No,needs_codebook_validation
+b4_br.dta,br06,float64,11542,92.53,2.0 | 1.0 | 0.0 | 3.0 | 5.0,needs_codebook_validation
+b4_br.dta,br07,float64,11542,92.53,0.0 | 1.0 | 5.0 | 4.0 | 2.0,needs_codebook_validation
+b4_br.dta,br08,category,6067,48.64,1:Yes | 3:No,needs_codebook_validation
+b4_br.dta,br09,float64,12019,96.35,1.0 | 2.0 | 0.0 | 3.0 | 5.0,needs_codebook_validation
+b4_br.dta,br10,float64,12019,96.35,0.0 | 3.0 | 1.0 | 2.0,needs_codebook_validation
+b4_br.dta,br11,category,6067,48.64,3:No | 1:Yes,needs_codebook_validation
+b4_br.dta,br12,float64,12271,98.37,2.0 | 1.0 | 0.0,needs_codebook_validation
+b4_br.dta,br13,category,6067,48.64,3:No | 1:Yes,needs_codebook_validation
+b4_br.dta,br14,float64,11352,91.01,1.0 | 2.0 | 4.0 | 3.0 | 5.0,needs_codebook_validation
+b4_br.dta,br15,float64,6067,48.64,5.0 | 9.0 | 7.0 | 0.0 | 6.0,needs_codebook_validation
+b4_br.dta,br15x,category,6067,48.64,1:Yes,needs_codebook_validation
+b4_br.dta,br16,float64,6067,48.64,0.0 | 1.0 | 2.0 | 4.0 | 3.0,needs_codebook_validation
+b4_br.dta,br16x,category,6067,48.64,1:Yes,needs_codebook_validation
+b4_br.dta,br16a,category,6263,50.21,3:No | 2:Yes,needs_codebook_validation
+b4_br.dta,ba00a,category,5687,45.59,1:RESPONDENT HAS A CHILD ROSTER FOR BOOK4 | 3:RESPONDENT HAS NO PREPRINTED/NEW RESPONDENT,needs_codebook_validation
+b4_br.dta,ba63n,float64,5876,47.11,10.0 | 2.0 | 7.0 | 3.0 | 6.0,needs_codebook_validation
+b4_br.dta,ba90x,category,5876,47.11,2:Yes | 3:No,needs_codebook_validation
+b4_br.dta,hhid14,object,0,0.0,0010651 | 0010600 | 0010851 | 0012200 | 0012241,needs_codebook_validation
+b4_br.dta,pidlink,object,0,0.0,001060004 | 001060007 | 001080012 | 001220002 | 001220011,needs_codebook_validation
+b4_br.dta,version,float64,0,0.0,1.3,needs_codebook_validation
+b4_br.dta,module,object,0,0.0,B4_BR,needs_codebook_validation
+b4_bx6.dta,hhid14_9,object,0,0.0,001060000 | 001240005 | 001240009 | 002020000 | 002184100,needs_codebook_validation
+b4_bx6.dta,pid14,float64,0,0.0,7.0 | 2.0 | 11.0 | 1.0 | 5.0,needs_codebook_validation
+b4_bx6.dta,bx63a1,float64,0,0.0,1.0 | 2.0 | 3.0 | 4.0 | 5.0,needs_codebook_validation
+b4_bx6.dta,bxar00,object,0,0.0,001060004 | 96 | 03 | 002020008 | 002220004,needs_codebook_validation
+b4_bx6.dta,bx63cx,category,0,0.0,2:Step child | 3:No | 1:Yes | 7:Not a child | 8:Don't know,needs_codebook_validation
+b4_bx6.dta,bx63c,float64,2126,100.0,,needs_codebook_validation
+b4_bx6.dta,bx64,category,293,13.78,3:Female | 1:Male,needs_codebook_validation
+b4_bx6.dta,bx64a,category,2126,100.0,,needs_codebook_validation
+b4_bx6.dta,bx64bx,category,293,13.78,1:Month/year | 8:Don't know,needs_codebook_validation
+b4_bx6.dta,bx64bmt,float64,846,39.79,98.0 | 8.0 | 7.0 | 3.0 | 4.0,needs_codebook_validation
+b4_bx6.dta,bx64byr,float64,846,39.79,9998.0 | 1983.0 | 1987.0 | 1989.0 | 1991.0,needs_codebook_validation
+b4_bx6.dta,bx65,category,293,13.78,1:Yes | 3:No | 8:Don't know,needs_codebook_validation
+b4_bx6.dta,bx65ax,category,2098,98.68,1:Given month and year | 8:Don't know,needs_codebook_validation
+b4_bx6.dta,bx65amt,float64,2103,98.92,98.0 | 3.0 | 10.0 | 8.0 | 12.0,needs_codebook_validation
+b4_bx6.dta,bx65ayr,float64,2103,98.92,2013.0 | 2004.0 | 2010.0 | 2006.0 | 9998.0,needs_codebook_validation
+b4_bx6.dta,bx66x,category,293,13.78,1:Enter age in years | 8:Don't know,needs_codebook_validation
+b4_bx6.dta,bx66,category,499,23.47,22.0 | 31.0 | 27.0 | 25.0 | 23.0,needs_codebook_validation
+b4_bx6.dta,bx66a,category,499,23.47,1:Yes | 3:No,needs_codebook_validation
+b4_bx6.dta,bx67,category,653,30.71,2:Married | 1:Unmarried | 8:Don't know | 4:Divorced | 5:Widow/widower,needs_codebook_validation
+b4_bx6.dta,bx68,category,653,30.71,2:Grade school | 1:None | 3:General jhigh | 5:General shigh (SLA) | 6:Vocational shigh (SMK),needs_codebook_validation
+b4_bx6.dta,bx69,category,653,30.71,2 | 96:No school | 0:Did not complete St grade at this level | 7:Graduated | 1,needs_codebook_validation
+b4_bx6.dta,bx70,category,653,30.71,4:In the same province | 1:In the same village | 2:In the same subdistrict | 3:In the same district | 14:Riau,needs_codebook_validation
+b4_bx6.dta,bx78,category,734,34.52,3:No | 1:Yes | 8:Don't know | 6:NA,needs_codebook_validation
+b4_bx6.dta,bx79,category,734,34.52,2:With Father only | 1:With Father and mother | 3:With Mother only | 4:Not with father and mother,needs_codebook_validation
+b4_bx6.dta,bx80,category,734,34.52,1:Working/trying to get work/helping to earn income | 98:Don't know | 4:Housekeeping | 3:Attending school | 6:Stay at home,needs_codebook_validation
+b4_bx6.dta,bx81,category,1329,62.51,5:Private worker | 8:Casual worker not in agriculture | 2:Self employed with  unpaid family/temporary worker | 6:Unpaid family worker | 4:Government worker,needs_codebook_validation
+b4_bx6.dta,bx83a,category,734,34.52,1:Still alive | 8:Don't know | 5:Has died more than 1months ago | 3:Has died in the last 1months,needs_codebook_validation
+b4_bx6.dta,bx84,category,758,35.65,2:At least once a year | 5:Everyday | 4:At least once a week | 1:Never | 3:At least once a month,needs_codebook_validation
+b4_bx6.dta,bx84a,category,955,44.92,1:Never | 3:At least once a month | 4:At least once a week | 5:Everyday | 2:At least once a year,needs_codebook_validation
+b4_bx6.dta,bx84b,category,982,46.19,1:Never | 3:At least once a month | 4:At least once a week | 2:At least once a year | 5:Everyday,needs_codebook_validation
+b4_bx6.dta,bx87a,category,797,37.49,3:No | 1:Yes | 7:Unwilling to answer,needs_codebook_validation
+b4_bx6.dta,bx88,object,0,0.0, | AD | A | D | G,needs_codebook_validation
+b4_bx6.dta,bx88g1,category,2107,99.11,12.0 | 6.0 | 9.0 | 15.0 | 1.0,needs_codebook_validation
+b4_bx6.dta,bx88g2,category,2107,99.11,5:Months | 3:Days,needs_codebook_validation
+b4_bx6.dta,bx88h1,category,2124,99.91,3.0 | 2.0,needs_codebook_validation
+b4_bx6.dta,bx88h2,category,2124,99.91,3:Days,needs_codebook_validation
+b4_bx6.dta,bx89a,category,797,37.49,1:Yes | 3:No | 7:Unwilling to answer,needs_codebook_validation
+b4_bx6.dta,bx90,object,0,0.0,A |  | V | D | G,needs_codebook_validation
+b4_bx6.dta,bx90g1,category,2096,98.59,3.0 | 1.0 | 2.0 | 12.0 | 14.0,needs_codebook_validation
+b4_bx6.dta,bx90g2,category,2096,98.59,3:Days | 5:Months,needs_codebook_validation
+b4_bx6.dta,bx90h1,category,2122,99.81,15.0 | 60.0 | 3.0 | 1.0,needs_codebook_validation
+b4_bx6.dta,bx90h2,category,2122,99.81,3:Days,needs_codebook_validation
+b4_bx6.dta,hhid14,object,0,0.0,0010600 | 0012451 | 0012452 | 0020200 | 0021841,needs_codebook_validation
+b4_bx6.dta,pid,float64,0,0.0,7.0 | 2.0 | 11.0 | 1.0 | 5.0,needs_codebook_validation
+b4_bx6.dta,pidlink,object,0,0.0,001060007 | 001240005 | 001240009 | 002020011 | 002180007,needs_codebook_validation
+b4_bx6.dta,bx88a,float64,1839,86.5,150000.0 | 2500000.0 | 50000.0 | 20000000.0 | 19630000.0,needs_codebook_validation
+b4_bx6.dta,bx88d,float64,1951,91.77,75000.0 | 100000.0 | 840000.0 | 1000000.0 | 50000.0,needs_codebook_validation
+b4_bx6.dta,bx88v,float64,2125,99.95,150000.0,needs_codebook_validation
+b4_bx6.dta,bx90a,float64,1893,89.04,10000.0 | 1500000.0 | 200000.0 | 400000.0 | 50000.0,needs_codebook_validation
+b4_bx6.dta,bx90d,float64,1955,91.96,100000.0 | 50000.0 | 300000.0 | 30000.0 | 200000.0,needs_codebook_validation
+b4_bx6.dta,bx90v,float64,2122,99.81,200000.0 | 100000.0,needs_codebook_validation
+b4_bx6.dta,bxn,float64,0,0.0,1.0 | 4.0 | 2.0 | 3.0 | 5.0,needs_codebook_validation
+b4_bx6.dta,bx90x,category,0,0.0,3:No => EP | 2:Yes,needs_codebook_validation
+b4_bx6.dta,version,float64,0,0.0,1.3,needs_codebook_validation
+b4_bx6.dta,module,object,0,0.0,B4_BX6,needs_codebook_validation
+b4_ch0.dta,hhid14_9,object,0,0.0,001060004 | 001060000 | 001080003 | 001220000 | 001224100,needs_codebook_validation
+b4_ch0.dta,pid14,float64,0,0.0,1.0 | 7.0 | 2.0 | 25.0 | 8.0,needs_codebook_validation
+b4_ch0.dta,ch00,category,286,2.29,3:New respondent | 1:Panel respondent with child listed at CH0A | 2:Panel respondent with no child listed at CH0A,needs_codebook_validation
+b4_ch0.dta,ch01aa,category,5661,45.38,1:Yes | 3:No,needs_codebook_validation
+b4_ch0.dta,ch01ab,float64,9076,72.76,1.0 | 4.0 | 2.0 | 3.0 | 5.0,needs_codebook_validation
+b4_ch0.dta,ch01ad,float64,9099,72.94,1.0 | 4.0 | 2.0 | 3.0 | 5.0,needs_codebook_validation
+b4_ch0.dta,ch01ae,float64,9099,72.94,0.0 | 3.0 | 1.0 | 2.0 | 5.0,needs_codebook_validation
+b4_ch0.dta,ch01acx,category,9076,72.76,3:No | 1:Yes,needs_codebook_validation
+b4_ch0.dta,ch01ac,category,9076,72.76,0:No | 1:Yes,needs_codebook_validation
+b4_ch0.dta,ch02a,float64,9076,72.76,1.0 | 4.0 | 2.0 | 3.0 | 5.0,needs_codebook_validation
+b4_ch0.dta,ch01ba,float64,7101,56.93,5.0 | 9.0 | 7.0 | 0.0 | 6.0,needs_codebook_validation
+b4_ch0.dta,ch01bb,float64,7101,56.93,0.0 | 1.0 | 2.0 | 4.0 | 3.0,needs_codebook_validation
+b4_ch0.dta,ch01bcx,category,7101,56.93,3:No | 1:Yes,needs_codebook_validation
+b4_ch0.dta,ch01bc,category,7101,56.93,0:Not pregnant | 1:Pregnant,needs_codebook_validation
+b4_ch0.dta,ch02b,float64,7101,56.93,5.0 | 10.0 | 7.0 | 0.0 | 2.0,needs_codebook_validation
+b4_ch0.dta,chp00x,category,12188,97.71,1:Yes | 3:No,needs_codebook_validation
+b4_ch0.dta,ch03,float64,4155,33.31,5.0 | 10.0 | 7.0 | 1.0 | 2.0,needs_codebook_validation
+b4_ch0.dta,chp03,category,12348,98.99,1.0 | 2.0,needs_codebook_validation
+b4_ch0.dta,ch11,category,12474,100.0,,needs_codebook_validation
+b4_ch0.dta,ch42b,category,288,2.31,3:No | 1:Yes | 9:Missing,needs_codebook_validation
+b4_ch0.dta,bxn,float64,11323,90.77,1.0 | 4.0 | 2.0 | 3.0 | 0.0,needs_codebook_validation
+b4_ch0.dta,bx90x,category,11323,90.77,3:No => EP | 2:Yes,needs_codebook_validation
+b4_ch0.dta,hhid14,object,0,0.0,0010651 | 0010600 | 0010851 | 0012200 | 0012241,needs_codebook_validation
+b4_ch0.dta,pid,float64,0,0.0,1.0 | 7.0 | 2.0 | 25.0 | 8.0,needs_codebook_validation
+b4_ch0.dta,pidlink,object,0,0.0,001060004 | 001060007 | 001080012 | 001220002 | 001220011,needs_codebook_validation
+b4_ch0.dta,version,float64,0,0.0,1.3,needs_codebook_validation
+b4_ch0.dta,module,object,0,0.0,B4_CH0,needs_codebook_validation
+b4_ch1.dta,hhid14_9,object,0,0.0,001060004 | 001060000 | 001080003 | 001220000 | 001224100,needs_codebook_validation
+b4_ch1.dta,pid14,float64,0,0.0,1.0 | 7.0 | 2.0 | 25.0 | 8.0,needs_codebook_validation
+b4_ch1.dta,ch05,float64,0,0.0,1.0 | 2.0 | 3.0 | 4.0 | 5.0,needs_codebook_validation
+b4_ch1.dta,ch06,category,0,0.0,2:Live birth | 4:Miscarriage | 3:Still birth | 1:Is pregnant,needs_codebook_validation
+b4_ch1.dta,ch06a,category,2734,18.28,3:No | 1:Yes,needs_codebook_validation
+b4_ch1.dta,ch07_id,category,2734,18.28,51:Not Live in this HH | 3.0 | 52:Died | 4.0 | 8.0,needs_codebook_validation
+b4_ch1.dta,ch08,category,2734,18.28,1:Male | 3:Female,needs_codebook_validation
+b4_ch1.dta,ch09x,category,666,4.45,1:Date given | 8:Don't Know,needs_codebook_validation
+b4_ch1.dta,ch09day,float64,1003,6.71,22.0 | 21.0 | 98.0 | 9.0 | 17.0,needs_codebook_validation
+b4_ch1.dta,ch09mth,category,1003,6.71,2:February | 6:June | 98:Don't know | 4:April | 11:November,needs_codebook_validation
+b4_ch1.dta,ch09yr,category,1003,6.71,2008.0 | 2010.0 | 2012.0 | 2013.0 | 1990.0,needs_codebook_validation
+b4_ch1.dta,ch10a,category,14621,97.75,98:Don't Know | 27.0 | 40.0 | 36.0 | 21.0,needs_codebook_validation
+b4_ch1.dta,ch10b,category,14621,97.75,9998:Don't Know | 2003.0 | 2012.0 | 1996.0 | 2006.0,needs_codebook_validation
+b4_ch1.dta,ch17,category,153,1.02,9.0 | 8.0 | 37.0 | 3.0 | 4.0,needs_codebook_validation
+b4_ch1.dta,ch17x,category,153,1.02,5:Months | 4:Weeks | 99:Missing,needs_codebook_validation
+b4_ch1.dta,age,float64,153,1.02,7.0 | 5.0 | 3.0 | 2.0 | 0.0,needs_codebook_validation
+b4_ch1.dta,hhid14,object,0,0.0,0010651 | 0010600 | 0010851 | 0012200 | 0012241,needs_codebook_validation
+b4_ch1.dta,pidlink,object,0,0.0,001060004 | 001060007 | 001080012 | 001220002 | 001220011,needs_codebook_validation
+b4_ch1.dta,ch12,category,153,1.02,1:Pregnancy ended before 1995 | 3:Pregnancy ended after 1994,needs_codebook_validation
+b4_ch1.dta,ch13,category,8209,54.88,1:CH06=2 (live birth) | 3:CH06=1,needs_codebook_validation
+b4_ch1.dta,ch14a,object,0,0.0, | W | D | DG | G,needs_codebook_validation
+b4_ch1.dta,ch14,category,6749,45.12,3:No | 1:Yes | 8:Don't know | 9:Missing,needs_codebook_validation
+b4_ch1.dta,ch15,object,0,0.0, | AV | A | F | G,needs_codebook_validation
+b4_ch1.dta,ch15a,object,0,0.0, | V | A | F | C,needs_codebook_validation
+b4_ch1.dta,ch15anmx,float64,7328,48.99,1.0 | 8.0 | 9.0,needs_codebook_validation
+b4_ch1.dta,ch15aadx,float64,7328,48.99,1.0 | 8.0 | 9.0,needs_codebook_validation
+b4_ch1.dta,ch15alcx,float64,7328,48.99,1.0 | 8.0 | 9.0,needs_codebook_validation
+b4_ch1.dta,ch15aax,category,7328,48.99,3:Same | 1:Given | 8:Don't know | 9:Missing,needs_codebook_validation
+b4_ch1.dta,ch15abx,category,7328,48.99,3:Same | 1:Given | 8:Don't know | 9:Missing,needs_codebook_validation
+b4_ch1.dta,ch15acx,category,7328,48.99,3:Same | 1:Given | 8:Don't know | 9:Missing,needs_codebook_validation
+b4_ch1.dta,ch15adx,category,7328,48.99,3:Same | 1:Given | 8:Don't know | 9:Missing,needs_codebook_validation
+b4_ch1.dta,ch15ad,float64,7328,48.99,12.0 | 31.0 | 14.0 | 21.0 | 36.0,needs_codebook_validation
+b4_ch1.dta,ch15ac,float64,7328,48.99,1.0 | 3.0 | 14.0 | 77.0 | 7.0,needs_codebook_validation
+b4_ch1.dta,ch15ab,float64,7328,48.99,62.0 | 91.0 | 32.0 | 34.0 | 30.0,needs_codebook_validation
+b4_ch1.dta,ch15afas,object,0,0.0, | 0012511 | 0019501 | W | 0022011,needs_codebook_validation
+b4_ch1.dta,ch16a,category,7328,48.99,0.0 | 3.0 | 1.0 | 2.0 | 4.0,needs_codebook_validation
+b4_ch1.dta,ch16bx,category,7328,48.99,1:Given | 6:Not yet in 2nd trimester | 9:Missing,needs_codebook_validation
+b4_ch1.dta,ch16b,category,7932,53.03,3.0 | 2.0 | 1.0 | 0.0 | 98:Don't Know,needs_codebook_validation
+b4_ch1.dta,ch16cx,category,7328,48.99,1:Given | 6:Not yet in 3rd trimester | 9:Missing,needs_codebook_validation
+b4_ch1.dta,ch16c,category,8257,55.2,3.0 | 1.0 | 2.0 | 0.0 | 4.0,needs_codebook_validation
+b4_ch1.dta,ch16da,category,7328,48.99,1:Yes | 3:No | 8:Don't know | 9:Missing,needs_codebook_validation
+b4_ch1.dta,ch16db,category,7328,48.99,1:Yes | 3:No | 8:Don't know | 9:Missing,needs_codebook_validation
+b4_ch1.dta,ch16dc,category,7328,48.99,1:Yes | 3:No | 8:Don't know | 9:Missing,needs_codebook_validation
+b4_ch1.dta,ch16dd,category,7328,48.99,1:Yes | 3:No | 8:Don't know | 9:Missing,needs_codebook_validation
+b4_ch1.dta,ch16de,category,7328,48.99,1:Yes | 3:No | 8:Don't know | 9:Missing,needs_codebook_validation
+b4_ch1.dta,ch16df,category,7328,48.99,1:Yes | 3:No | 8:Don't know | 9:Missing,needs_codebook_validation
+b4_ch1.dta,ch16dg,category,7328,48.99,1:Yes | 3:No | 8:Don't know | 9:Missing,needs_codebook_validation
+b4_ch1.dta,ch16dh,category,7328,48.99,1:Yes | 3:No | 8:Don't know | 9:Missing,needs_codebook_validation
+b4_ch1.dta,ch16e,category,7328,48.99,1:Yes | 3:No | 8:Don't know | 9:Missing,needs_codebook_validation
+b4_ch1.dta,ch16f,category,7328,48.99,1:Yes | 3:No | 8:Don't know | 9:Missing,needs_codebook_validation
+b4_ch1.dta,ch16gx,category,8713,58.25,1:Number given | 8:Don't Know | 9:Missing,needs_codebook_validation
+b4_ch1.dta,ch16g,float64,9552,63.86,150.0 | 100.0 | 40.0 | 50.0 | 30.0,needs_codebook_validation
+b4_ch1.dta,ch18,category,6749,45.12,3:CH06=2 or 3 | 2:CH06=4 | 1:CH06=1,needs_codebook_validation
+b4_ch1.dta,ch18aa,category,14169,94.73,1:Accident | 6:Too tired/too much work | 95:Other | 2:Abort by doctor's suggestion | 4:Because of sick,needs_codebook_validation
+b4_ch1.dta,ch18a,category,8216,54.93,3:No | 1:Yes | 8:Don't know,needs_codebook_validation
+b4_ch1.dta,ch18b,category,8337,55.74,3:No | 1:Yes | 9:Missing,needs_codebook_validation
+b4_ch1.dta,ch18c,category,8337,55.74,3:No | 1:Yes | 9:Missing,needs_codebook_validation
+b4_ch1.dta,ch19,category,8220,54.95,10:Family members house | 9:Own house | 7:Clinic/office of midwife | 1:Public hospital | 6:Clinic/office of physician,needs_codebook_validation
+b4_ch1.dta,ch19a,category,9751,65.19,7:Clinic/office of midwife | 1:Public hospital | 6:Clinic/office of physician | 4:Community health center | 2:Private hospital,needs_codebook_validation
+b4_ch1.dta,ch19anmx,float64,9751,65.19,1.0 | 8.0 | 9.0,needs_codebook_validation
+b4_ch1.dta,ch19aadx,float64,9751,65.19,1.0 | 8.0 | 9.0,needs_codebook_validation
+b4_ch1.dta,ch19alcx,float64,9751,65.19,1.0 | 8.0 | 9.0,needs_codebook_validation
+b4_ch1.dta,ch19aax,category,9751,65.19,1:Given | 8:Don't know | 3:Same as residence | 9:Missing,needs_codebook_validation
+b4_ch1.dta,ch19abx,category,9751,65.19,1:Given | 3:Same as residence | 8:Don't know | 9:Missing,needs_codebook_validation
+b4_ch1.dta,ch19acx,category,9751,65.19,3:Same as residence | 1:Given | 8:Don't know | 9:Missing,needs_codebook_validation
+b4_ch1.dta,ch19adx,category,9751,65.19,3:Same as residence | 1:Given | 8:Don't know | 9:Missing,needs_codebook_validation
+b4_ch1.dta,ch19ad,float64,9751,65.19,12.0 | 31.0 | 14.0 | 21.0 | 36.0,needs_codebook_validation
+b4_ch1.dta,ch19ac,float64,9751,65.19,14.0 | 77.0 | 7.0 | 3.0 | 75.0,needs_codebook_validation
+b4_ch1.dta,ch19ab,float64,9751,65.19,32.0 | 34.0 | 30.0 | 50.0 | 130.0,needs_codebook_validation
+b4_ch1.dta,ch19afas,object,0,0.0, | 0022502 | W | 0022254 | 0039051,needs_codebook_validation
+b4_ch1.dta,ch20,object,0,0.0, | H | W | B | E,needs_codebook_validation
+b4_ch1.dta,ch20c,object,0,0.0, | G | V | BC | BL,needs_codebook_validation
+b4_ch1.dta,ch20gx,category,8337,55.74,1:Given | 8:Don't know | 9:Missing,needs_codebook_validation
+b4_ch1.dta,ch20ga,category,8337,55.74,3:No =>CH2H | 1:Yes | 9:Missing,needs_codebook_validation
+b4_ch1.dta,ch20gb,category,12808,85.63,10:Jampersal | 7:Jamkesmas | 3:Employer provided health benefits | 6:SKTM | 2:Jamsostek,needs_codebook_validation
+b4_ch1.dta,ch20gcx,category,12808,85.63,8:Don't know | 1:Total cost,needs_codebook_validation
+b4_ch1.dta,ch20gc,object,0,0.0, | ___.__1.000.000 | ___.___.___.__0 | ___._10.000.000 | ___.___.400.000,needs_codebook_validation
+b4_ch1.dta,ch20gd,category,13489,90.18,3:No => CH2H | 1:Yes,needs_codebook_validation
+b4_ch1.dta,ch20gex,category,14673,98.09,1:Rupiah | 8:Don't know,needs_codebook_validation
+b4_ch1.dta,ch20ge,object,0,0.0, | ___.___.400.000 | ___.__7.000.000 | ___.__1.800.000 | ___.__4.000.000,needs_codebook_validation
+b4_ch1.dta,ch20h,category,8337,55.74,1:Yes | 3:No | 9:Missing,needs_codebook_validation
+b4_ch1.dta,ch21,category,8337,55.74,1:CH06=2 (live birth) | 3:CH06=3,needs_codebook_validation
+b4_ch1.dta,ch22,category,8438,56.41,3:Similar | 4:Smaller | 0Bigger | 1:Much bigger | 98:Don't know,needs_codebook_validation
+b4_ch1.dta,ch23,category,8438,56.41,3:No | 1:Yes | 9:Missing,needs_codebook_validation
+b4_ch1.dta,ch24,category,8684,58.06,3.5 | 9.98 | 3.2 | 3.0 | 4.0,needs_codebook_validation
+b4_ch1.dta,ch24a,category,8438,56.41,3:No | 1:Yes | 9:Missing,needs_codebook_validation
+b4_ch1.dta,ch24cx,category,8718,58.28,1:Given | 96:Not yet fed | 88:Died before ever fed | 99:Missing,needs_codebook_validation
+b4_ch1.dta,ch24c,category,9041,60.44,1.0 | 6.0 | 9.0 | 3.0 | 2.0,needs_codebook_validation
+b4_ch1.dta,ch24c1,category,9041,60.44,3:Days | 5:Months | 4:Weeks,needs_codebook_validation
+b4_ch1.dta,ch24dx,category,8718,58.28,1:Given | 96:Not yet fed | 88:Died before ever fed | 99:Missing,needs_codebook_validation
+b4_ch1.dta,ch24d,category,9148,61.16,2.0 | 10.0 | 6.0 | 5.0 | 4.0,needs_codebook_validation
+b4_ch1.dta,ch24d1,category,9148,61.16,5:Months | 4:Weeks | 3:Days,needs_codebook_validation
+b4_ch1.dta,ch24ex,category,8718,58.28,5:Months | 96:Still breastfeeding | 88:Died while breastfeeding | 99:Missing,needs_codebook_validation
+b4_ch1.dta,ch24e,category,10571,70.67,9.0 | 12.0 | 24.0 | 8.0 | 13.0,needs_codebook_validation
+b4_ch1.dta,ch24f,object,0,0.0, | Q | M | R | G,needs_codebook_validation
+b4_ch1.dta,ch25,category,2733,18.27,1:Yes | 3:No,needs_codebook_validation
+b4_ch1.dta,ch26,category,14490,96.87,1.0 | 17.0 | 3.0 | 12.0 | 4.0,needs_codebook_validation
+b4_ch1.dta,ch26x,category,14490,96.87,3:Days | 4:Weeks | 5:Months | 6:Years,needs_codebook_validation
+b4_ch1.dta,ch27x1,category,2854,19.08,3:Child not listed in HH roster | 1:Child live in HH | 2:Child died/Not live in HH but listed in HH roster,needs_codebook_validation
+b4_ch1.dta,ch27,float64,3885,25.97,3.0 | 4.0 | 8.0 | 9.0 | 10.0,needs_codebook_validation
+b4_ch1.dta,ch27x,category,2854,19.08,3:New/Panel without child roster | 1:Panel with child roster,needs_codebook_validation
+b4_ch1.dta,ch27b,category,7354,49.16,3:Alive not in HH | 1:Alive in HH | 5:Dead,needs_codebook_validation
+b4_ch1.dta,ch28a,category,13618,91.04,3:No | 1:Yes,needs_codebook_validation
+b4_ch1.dta,ch28b,category,14208,94.99,1:Yes | 3:No,needs_codebook_validation
+b4_ch1.dta,ch29a,category,14944,99.91,3:No | 1:Yes,needs_codebook_validation
+b4_ch1.dta,ch29b,category,14957,99.99,3:No,needs_codebook_validation
+b4_ch1.dta,ch30a,category,14222,95.08,2:Married | 1:Single | 98:Don't know | 4:Divorced | 5:Widow/widower,needs_codebook_validation
+b4_ch1.dta,ch31a,category,14222,95.08,61:University S1 | 6:Sr high vocational (SMK Kejuruan) | 5:Sr high general (SMU Umum) | 74:Madrasah Aliyah | 3:Jr high general (SMP Umum),needs_codebook_validation
+b4_ch1.dta,ch32a,category,14222,95.08,1 | 0:Did not complete St at that level | 96:No school | 7:Graduated | 2,needs_codebook_validation
+b4_ch1.dta,ch32b,category,14222,95.08,1:Yes | 3:No | 6:NA,needs_codebook_validation
+b4_ch1.dta,ch32c,category,14222,95.08,1:Yes | 3:No,needs_codebook_validation
+b4_ch1.dta,ch32d,category,14222,95.08,3:Attending school | 1:Working/trying to get work/helping to earn income | 4:Housekeeping | 98:Don't know | 2:Job searching,needs_codebook_validation
+b4_ch1.dta,ch33a,category,14222,95.08,3:In the same district | 1:In the same village | 12:North Sumatra | 4:In the same province | 31:Jakarta,needs_codebook_validation
+b4_ch1.dta,ch34a,category,14231,95.14,3:Attending school | 1:Working/trying to get work/helping to earn income | 4:Housekeeping | 2:Job searching | 98:Don't know,needs_codebook_validation
+b4_ch1.dta,ch35a,category,14544,97.23,4:Goverment worker/employee | 8:Freelancer in non-agriculture | 5:Private worker/employee | 1:Self employed | 6:Unpaid family worker,needs_codebook_validation
+b4_ch1.dta,ch37a,category,14231,95.14,4:At least once a week | 5:Everyday | 2:At least once a year | 3:At least once a month | 1:Never,needs_codebook_validation
+b4_ch1.dta,ch37b,category,14431,96.48,4:At least once a week | 1:Never | 5:Everyday | 3:At least once a month | 2:At least once a year,needs_codebook_validation
+b4_ch1.dta,ch37c,category,14550,97.27,1:Never | 4:At least once a week | 5:Everyday | 3:At least once a month | 2:At least once a year,needs_codebook_validation
+b4_ch1.dta,ch38a,category,14231,95.14,3:No | 1:Yes | 7:Unwilling to answer,needs_codebook_validation
+b4_ch1.dta,ch39a,object,0,0.0, | A | G | D | AD,needs_codebook_validation
+b4_ch1.dta,ch39ag,category,14902,99.63,1.0 | 4.0 | 7.0 | 12.0 | 30.0,needs_codebook_validation
+b4_ch1.dta,ch39agx,category,14902,99.63,3:Days | 5:Months,needs_codebook_validation
+b4_ch1.dta,ch39ah,category,14956,99.99,2.0 | 12.0,needs_codebook_validation
+b4_ch1.dta,ch39ahx,category,14956,99.99,5:Months,needs_codebook_validation
+b4_ch1.dta,ch40a,category,14231,95.14,3:No | 1:Yes,needs_codebook_validation
+b4_ch1.dta,ch41a,object,0,0.0, | G | DG | D | A,needs_codebook_validation
+b4_ch1.dta,ch41ag,category,14909,99.67,1.0 | 2.0 | 12.0 | 25.0 | 3.0,needs_codebook_validation
+b4_ch1.dta,ch41agx,category,14909,99.67,3:Days | 5:Months,needs_codebook_validation
+b4_ch1.dta,ch41ah,category,14949,99.94,7.0 | 1.0 | 30.0 | 2.0 | 3.0,needs_codebook_validation
+b4_ch1.dta,ch41ahx,category,14949,99.94,3:Days | 5:Months,needs_codebook_validation
+b4_ch1.dta,ch41av,object,0,0.0, | ___._60.000 | ___.200.000,needs_codebook_validation
+b4_ch1.dta,ch20g,float64,8506,56.87,0.0 | 1000000.0 | 100000.0 | 200000.0 | 700000.0,needs_codebook_validation
+b4_ch1.dta,ch39aa,float64,14638,97.86,5000000.0 | 12000000.0 | 50000.0 | 1500000.0 | 100000.0,needs_codebook_validation
+b4_ch1.dta,ch39ad,float64,14739,98.54,10000.0 | 100000.0 | 200000.0 | 1000000.0 | 2000000.0,needs_codebook_validation
+b4_ch1.dta,ch39av,float64,14955,99.98,100000.0 | 5000000.0 | 280000.0,needs_codebook_validation
+b4_ch1.dta,ch41aa,float64,14637,97.85,1000000.0 | 100000.0 | 50000.0 | 4000000.0 | 200000.0,needs_codebook_validation
+b4_ch1.dta,ch41ad,float64,14794,98.9,200000.0 | 150000.0 | 100000.0 | 160000.0 | 80000.0,needs_codebook_validation
+b4_ch1.dta,version,float64,0,0.0,1.3,needs_codebook_validation
+b4_ch1.dta,module,object,0,0.0,B4_CH1,needs_codebook_validation
+b4_cov.dta,hhid14_9,object,0,0.0,001060004 | 001060000 | 001080003 | 001220000 | 001224100,needs_codebook_validation
+b4_cov.dta,pid14,float64,0,0.0,1.0 | 7.0 | 2.0 | 25.0 | 8.0,needs_codebook_validation
+b4_cov.dta,idivwr,object,0,0.0,A34 | A33 | A31 | A35 | A36,needs_codebook_validation
+b4_cov.dta,panel,category,0,0.0,3:New | 1:Panel,needs_codebook_validation
+b4_cov.dta,age,category,0,0.0,28.0 | 39.0 | 40.0 | 54.0 | 32.0,needs_codebook_validation
+b4_cov.dta,marstat,category,0,0.0,2:Married | 5:Widowed | 3:Separated | 4:Divorced | 6:Cohabitate,needs_codebook_validation
+b4_cov.dta,dob_day,category,0,0.0,98:Don't know | 7.0 | 3.0 | 5.0 | 29.0,needs_codebook_validation
+b4_cov.dta,dob_mth,category,0,0.0,98:Don't know | 10:October | 3:March | 9:September | 12:December,needs_codebook_validation
+b4_cov.dta,dob_yr,category,0,0.0,1986.0 | 1975.0 | 1974.0 | 1960.0 | 1981.0,needs_codebook_validation
+b4_cov.dta,langmain,category,0,0.0,0:Indonesian | 13:Nias | 1:Javanese | 17:Lahat | 4:Batak,needs_codebook_validation
+b4_cov.dta,langothr,category,0,0.0,96:No other | 13:Nias | 0:Indonesian | 4:Batak | 1:Javanese,needs_codebook_validation
+b4_cov.dta,result,category,0,0.0,1:Completed | 3:Not completed | 2:Partially completed,needs_codebook_validation
+b4_cov.dta,reason,category,12469,95.49,3:Respondent refused (to be interviewed) | 1:Respondent was not at home/not available | 5:Other | 2:Respondent was seriously ill,needs_codebook_validation
+b4_cov.dta,sup_obs,category,0,0.0,3:No | 1:Yes,needs_codebook_validation
+b4_cov.dta,sup_edit,category,0,0.0,3:No | 1:Yes,needs_codebook_validation
+b4_cov.dta,sup_veri,category,0,0.0,3:No | 1:Yes,needs_codebook_validation
+b4_cov.dta,proxy,category,0,0.0,3:Not Book Proxy | 1:Book Proxy,needs_codebook_validation
+b4_cov.dta,piprox,float64,12763,97.74,1.0 | 7.0 | 96.0 | 3.0 | 2.0,needs_codebook_validation
+b4_cov.dta,relatprox,float64,12763,97.74,1.0 | 2.0 | 6.0 | 4.0 | 5.0,needs_codebook_validation
+b4_cov.dta,reasprox,float64,12763,97.74,4.0 | 6.0 | 5.0 | 2.0 | 1.0,needs_codebook_validation
+b4_cov.dta,resvis,category,0,0.0,1:Yes | 3:No,needs_codebook_validation
+b4_cov.dta,hhid14,object,0,0.0,0010651 | 0010600 | 0010851 | 0012200 | 0012241,needs_codebook_validation
+b4_cov.dta,pidlink,object,0,0.0,001060004 | 001060007 | 001080012 | 001220002 | 001220011,needs_codebook_validation
+b4_cov.dta,cp1,object,0,0.0,BF | EF | DF | CF | CDEF,needs_codebook_validation
+b4_cov.dta,cp2,category,0,0.0,3:Fair | 1:Excelent | 2:Good | 5:Very bad | 4:Not so good,needs_codebook_validation
+b4_cov.dta,cp3,category,0,0.0,3:Fair | 1:Excelent | 2:Good | 5:Very bad | 4:Not so good,needs_codebook_validation
+b4_cov.dta,version,float64,0,0.0,1.3,needs_codebook_validation
+b4_cov.dta,module,object,0,0.0,B4_COV,needs_codebook_validation
+b4_cx1.dta,hhid14_9,object,0,0.0,001060004 | 001060000 | 001080003 | 001224100 | 001240005,needs_codebook_validation
+b4_cx1.dta,pid14,float64,0,0.0,1.0 | 7.0 | 2.0 | 25.0 | 8.0,needs_codebook_validation
+b4_cx1.dta,cxtype,object,0,0.0,A | B | C | E | F,needs_codebook_validation
+b4_cx1.dta,cx01,category,0,0.0,3:No | 1:Yes,needs_codebook_validation
+b4_cx1.dta,cx02,category,33571,31.63,3:No | 1:Yes,needs_codebook_validation
+b4_cx1.dta,cx02ax,category,91640,86.36,1:Year given | 8:Don't know,needs_codebook_validation
+b4_cx1.dta,cx02a,category,91793,86.5,2013.0 | 2014.0 | 2004.0 | 2015.0 | 1996.0,needs_codebook_validation
+b4_cx1.dta,cx02b,category,105967,99.86,98:Don't know | 25.0 | 19.0 | 32.0 | 18.0,needs_codebook_validation
+b4_cx1.dta,hhid14,object,0,0.0,0010651 | 0010600 | 0010851 | 0012241 | 0012451,needs_codebook_validation
+b4_cx1.dta,pidlink,object,0,0.0,001060004 | 001060007 | 001080012 | 001220011 | 001240005,needs_codebook_validation
+b4_cx1.dta,version,float64,0,0.0,1.3,needs_codebook_validation
+b4_cx1.dta,module,object,0,0.0,B4_CX1,needs_codebook_validation
+b4_cx2.dta,hhid14_9,object,0,0.0,001060004 | 001060000 | 001080003 | 001220000 | 001224100,needs_codebook_validation
+b4_cx2.dta,pid14,float64,0,0.0,1.0 | 7.0 | 2.0 | 25.0 | 8.0,needs_codebook_validation
+b4_cx2.dta,cx00,category,0,0.0,3:Age of respondent < 50 | 1:Age of respondent >= 50,needs_codebook_validation
+b4_cx2.dta,cx20,category,1618,12.97,1:Yes | 3:No | 8:Don't know,needs_codebook_validation
+b4_cx2.dta,cx21,category,6435,51.59,4:month injection | 1:Pills | 8:Norplant/Implant | 7:IUD/AKDR/Spiral | 2:month injection,needs_codebook_validation
+b4_cx2.dta,cx21aax,category,6655,53.35,1:Enter date | 8:Don't know,needs_codebook_validation
+b4_cx2.dta,cx21aamth,float64,6691,53.64,8.0 | 9.0 | 5.0 | 98.0 | 12.0,needs_codebook_validation
+b4_cx2.dta,cx21aayr,float64,6691,53.64,2013.0 | 2014.0 | 2004.0 | 2012.0 | 2015.0,needs_codebook_validation
+b4_cx2.dta,cx21ax,category,6655,53.35,1:Month and year given | 8:Don't know,needs_codebook_validation
+b4_cx2.dta,cx21amth,float64,6675,53.51,5.0 | 11.0 | 9.0 | 4.0 | 12.0,needs_codebook_validation
+b4_cx2.dta,cx21ayr,category,6675,53.51,2015.0 | 2014.0 | 1999.0 | 2011.0 | 2013.0,needs_codebook_validation
+b4_cx2.dta,cx21b,category,6655,53.35,12:Midwife | 11:Nurse/paramedic | 1:Public hospital | 3:Puskesmas | 2:Private hospital,needs_codebook_validation
+b4_cx2.dta,cx21bcode,float64,6655,53.35,12.0 | 11.0 | 1.0 | 3.0 | 2.0,needs_codebook_validation
+b4_cx2.dta,cx21bnmx,float64,6655,53.35,1.0 | 8.0,needs_codebook_validation
+b4_cx2.dta,cx21badx,float64,6655,53.35,1.0 | 8.0,needs_codebook_validation
+b4_cx2.dta,cx21blcx,float64,6655,53.35,8.0 | 1.0,needs_codebook_validation
+b4_cx2.dta,cx21bax,category,6655,53.35,1:Given | 3:Same as residence | 8:Don't know,needs_codebook_validation
+b4_cx2.dta,cx21bbx,category,6655,53.35,1:Given | 3:Same as residence | 8:Don't know,needs_codebook_validation
+b4_cx2.dta,cx21bcx,category,6655,53.35,1:Given | 3:Same as residence | 8:Don't know,needs_codebook_validation
+b4_cx2.dta,cx21bdx,category,6655,53.35,3:Same as residence | 1:Given | 8:Don't know,needs_codebook_validation
+b4_cx2.dta,cx21bd,float64,6655,53.35,12.0 | 31.0 | 15.0 | 14.0 | 36.0,needs_codebook_validation
+b4_cx2.dta,cx21bc,float64,6655,53.35,14.0 | 1.0 | 3.0 | 75.0 | 77.0,needs_codebook_validation
+b4_cx2.dta,cx21bb,float64,6655,53.35,10.0 | 70.0 | 62.0 | 91.0 | 32.0,needs_codebook_validation
+b4_cx2.dta,cx21bfas,object,0,0.0,W |  | 0021250 | 0034250 | Y,needs_codebook_validation
+b4_cx2.dta,cx21cx,category,6655,53.35,1:Given | 8:Don't know,needs_codebook_validation
+b4_cx2.dta,cx21d,category,6655,53.35,3:No | 1:Yes | 2:Yes,needs_codebook_validation
+b4_cx2.dta,cx21e,category,6846,54.88,1:Yes | 3:No,needs_codebook_validation
+b4_cx2.dta,cx22a,category,6846,54.88,3:Never | 1:Ever | 8:Don't Know,needs_codebook_validation
+b4_cx2.dta,cx22b,category,6846,54.88,3:Never | 1:Ever | 8:Don't Know,needs_codebook_validation
+b4_cx2.dta,cx22c,category,6846,54.88,3:Never | 1:Ever | 8:Don't Know,needs_codebook_validation
+b4_cx2.dta,cx22d,object,0,0.0,D |  | W | CDH | HV,needs_codebook_validation
+b4_cx2.dta,cx22e,category,9767,78.3,3:No | 1:Yes,needs_codebook_validation
+b4_cx2.dta,cx22fmth,float64,11953,95.82,9.0 | 98.0 | 12.0 | 8.0 | 10.0,needs_codebook_validation
+b4_cx2.dta,cx22fyr,category,11953,95.82,2014.0 | 9998:Don't know | 2013.0 | 2015.0 | 2011.0,needs_codebook_validation
+b4_cx2.dta,cx22gnmx,float64,11953,95.82,1.0 | 8.0,needs_codebook_validation
+b4_cx2.dta,cx22gadx,float64,11953,95.82,1.0 | 8.0,needs_codebook_validation
+b4_cx2.dta,cx22glcx,float64,11953,95.82,8.0 | 1.0,needs_codebook_validation
+b4_cx2.dta,cx22gax,category,11953,95.82,1:Given | 3:Same as residence | 8:Don't know,needs_codebook_validation
+b4_cx2.dta,cx22gbx,category,11953,95.82,3:Same as residence | 1:Given | 8:Don't know,needs_codebook_validation
+b4_cx2.dta,cx22gcx,category,11953,95.82,3:Same as residence | 1:Given | 8:Don't know,needs_codebook_validation
+b4_cx2.dta,cx22gdx,category,11953,95.82,3:Same as residence | 1:Given,needs_codebook_validation
+b4_cx2.dta,cx22gd,float64,11953,95.82,12.0 | 14.0 | 13.0 | 32.0 | 16.0,needs_codebook_validation
+b4_cx2.dta,cx22gc,float64,11953,95.82,1.0 | 14.0 | 77.0 | 6.0 | 22.0,needs_codebook_validation
+b4_cx2.dta,cx22gb,float64,11953,95.82,62.0 | 30.0 | 50.0 | 71.0 | 20.0,needs_codebook_validation
+b4_cx2.dta,cx22gfas,object,0,0.0, | 0019501 | 0029501 | W | 0033033,needs_codebook_validation
+b4_cx2.dta,cx22h,category,6846,54.88,3:No | 1:Yes,needs_codebook_validation
+b4_cx2.dta,cx22i,category,9522,76.33,1:Pill | 0Norplant/ Implant | 4:month injection | 2:month injection | 6:Condom,needs_codebook_validation
+b4_cx2.dta,cx22j,object,0,0.0, | D | V | HV | H,needs_codebook_validation
+b4_cx2.dta,cx26,object,0,0.0, | X | B | B G | G Q,needs_codebook_validation
+b4_cx2.dta,cx27,category,2314,18.55,1:Yes | 3:No | 8:Don't know,needs_codebook_validation
+b4_cx2.dta,cx28,category,5109,40.96,4:month injection | 8:Norplant/Implant | 1:Pills | 7:IUD/AKDR/Spiral | 98:Other,needs_codebook_validation
+b4_cx2.dta,hhid14,object,0,0.0,0010651 | 0010600 | 0010851 | 0012200 | 0012241,needs_codebook_validation
+b4_cx2.dta,pidlink,object,0,0.0,001060004 | 001060007 | 001080012 | 001220002 | 001220011,needs_codebook_validation
+b4_cx2.dta,cx21c,float64,6783,54.38,50000.0 | 25000.0 | 55000.0 | 20000.0 | 0.0,needs_codebook_validation
+b4_cx2.dta,version,float64,0,0.0,1.3,needs_codebook_validation
+b4_cx2.dta,module,object,0,0.0,B4_CX2,needs_codebook_validation
+b4_ep1.dta,hhid14_9,object,0,0.0,001060004 | 001060000 | 001080003 | 001220000 | 001224100,needs_codebook_validation
+b4_ep1.dta,pid14,float64,0,0.0,1.0 | 7.0 | 2.0 | 25.0 | 8.0,needs_codebook_validation
+b4_ep1.dta,ep02,category,0,0.0,3:No | 1:Yes,needs_codebook_validation
+b4_ep1.dta,ep03,category,8045,66.01,1:Yes | 3:No,needs_codebook_validation
+b4_ep1.dta,ep04,category,3126,25.65,2.0 | 3.0 | 5.0 | 4.0 | 6.0,needs_codebook_validation
+b4_ep1.dta,ep19x,category,3128,25.66,3:No => CX | 2:Yes,needs_codebook_validation
+b4_ep1.dta,hhid14,object,0,0.0,0010651 | 0010600 | 0010851 | 0012200 | 0012241,needs_codebook_validation
+b4_ep1.dta,pidlink,object,0,0.0,001060004 | 001060007 | 001080012 | 001220002 | 001220011,needs_codebook_validation
+b4_ep1.dta,version,float64,0,0.0,1.3,needs_codebook_validation
+b4_ep1.dta,module,object,0,0.0,B4_EP1,needs_codebook_validation
+b4_ep2.dta,hhid14_9,object,0,0.0,001060004 | 001060000 | 001080003 | 001220000 | 001224100,needs_codebook_validation
+b4_ep2.dta,pid14,float64,0,0.0,1.0 | 7.0 | 2.0 | 25.0 | 8.0,needs_codebook_validation
+b4_ep2.dta,ep05,float64,0,0.0,1.0 | 2.0 | 3.0 | 4.0 | 5.0,needs_codebook_validation
+b4_ep2.dta,ep06,object,0,0.0,96 | 08 | 09 | 001060004 | 03,needs_codebook_validation
+b4_ep2.dta,ep07,category,0,0.0,96:NA | 4.0 | 5.0 | 8.0 | 9.0,needs_codebook_validation
+b4_ep2.dta,ep07a,category,0,0.0,96:NA | 4.0 | 1.0 | 2.0 | 9.0,needs_codebook_validation
+b4_ep2.dta,ep09x,category,0,0.0,1:Biological Child | 2:Step child | 3:Adopted child | 6:Duplicates | 7:Not a child,needs_codebook_validation
+b4_ep2.dta,ep09,float64,14812,99.45,2.0 | 3.0 | 1.0 | 5.0 | 4.0,needs_codebook_validation
+b4_ep2.dta,ep10,category,89,0.6,1:Male | 3:Female,needs_codebook_validation
+b4_ep2.dta,ep11a,category,6834,45.88,14.0 | 99:Missing | 5.0 | 3.0 | 4.0,needs_codebook_validation
+b4_ep2.dta,ep11,category,89,0.6,7.0 | 16.0 | 12.0 | 29.0 | 14.0,needs_codebook_validation
+b4_ep2.dta,ep12,category,89,0.6,1:Yes | 3:No | 8:Don't know,needs_codebook_validation
+b4_ep2.dta,ep13,category,502,3.37,1:Yes | 3:No,needs_codebook_validation
+b4_ep2.dta,ep14,category,966,6.49,3:No | 1:Yes,needs_codebook_validation
+b4_ep2.dta,ep15,category,966,6.49,1:Yes | 3:No,needs_codebook_validation
+b4_ep2.dta,ep16,category,4257,28.58,6:Vocational shigh (SMK) | 1:Unschooled | 3:General jhigh | 2:Grade school | 61:University S1,needs_codebook_validation
+b4_ep2.dta,ep17,category,4257,28.58,7:Graduated | 96:No school | 98:Don't know | 5 | 1,needs_codebook_validation
+b4_ep2.dta,ep18,category,966,6.49,2:Better | 9:Missing | 3:Same | 1:Much better | 4:Worst,needs_codebook_validation
+b4_ep2.dta,ep19,category,966,6.49,2:Better | 9:Missing | 3:Same | 1:Much better | 4:Worst,needs_codebook_validation
+b4_ep2.dta,hhid14,object,0,0.0,0010651 | 0010600 | 0010851 | 0012200 | 0012241,needs_codebook_validation
+b4_ep2.dta,pidlink,object,0,0.0,001060004 | 001060007 | 001080012 | 001220002 | 001220011,needs_codebook_validation
+b4_ep2.dta,version,float64,0,0.0,1.3,needs_codebook_validation
+b4_ep2.dta,module,object,0,0.0,B4_EP2,needs_codebook_validation
+b4_kw2.dta,hhid14_9,object,0,0.0,001060004 | 001060000 | 001080003 | 001220000 | 001224100,needs_codebook_validation
+b4_kw2.dta,pid14,float64,0,0.0,1.0 | 7.0 | 2.0 | 25.0 | 8.0,needs_codebook_validation
+b4_kw2.dta,kw00a,category,2,0.02,3:No => KW03a | 1:Yes,needs_codebook_validation
+b4_kw2.dta,kw00ba,float64,4145,34.01,4.0 | 3.0 | 5.0 | 8.0 | 7.0,needs_codebook_validation
+b4_kw2.dta,kw00bc,float64,4145,34.01,1.0 | 3.0 | 4.0 | 2.0 | 6.0,needs_codebook_validation
+b4_kw2.dta,kw00c,category,4145,34.01,1:Yes | 3:No,needs_codebook_validation
+b4_kw2.dta,kw00d,category,4308,35.35,3:No => KW02A1 | 1:Yes,needs_codebook_validation
+b4_kw2.dta,kw03a,category,7126,58.47,5:Married formal according to adat law | 3:Married formal (KUA or civil registration) | 4:Married formal according to religious law | 8:Widow/Widower | 6:Separated,needs_codebook_validation
+b4_kw2.dta,kw03,category,7126,58.47,1.0 | 2.0 | 3.0 | 4.0 | 5.0,needs_codebook_validation
+b4_kw2.dta,kw02a1,category,2,0.02,1:Yes | 3:No,needs_codebook_validation
+b4_kw2.dta,kw02a2x,float64,2,0.02,6.0 | 1.0 | 3.0,needs_codebook_validation
+b4_kw2.dta,kw02gx,category,7126,58.47,1:Husband live in HH | 3:Husband not listed in HH roster | 2:Husband died/Not live in HH/Listed in HH roster,needs_codebook_validation
+b4_kw2.dta,kw02g,category,8176,67.08,2.0 | 1.0 | 4.0 | 12.0 | 8.0,needs_codebook_validation
+b4_kw2.dta,kw02b,category,7126,58.47,3:No | 1:Yes,needs_codebook_validation
+b4_kw2.dta,kw02cx,category,11682,95.85,1:Given | 8:Don't know,needs_codebook_validation
+b4_kw2.dta,kw02c,category,11687,95.89,1.0 | 2.0 | 30.0 | 4.0 | 7.0,needs_codebook_validation
+b4_kw2.dta,kw02d,object,0,0.0, | V | D | G | F,needs_codebook_validation
+b4_kw2.dta,kw02e,category,7126,58.47,3:No | 1:Yes | 9:Missing,needs_codebook_validation
+b4_kw2.dta,kw02x,category,7126,58.47,3:No | 1:Yes => KW02L,needs_codebook_validation
+b4_kw2.dta,kw02h,category,7129,58.49,3:No | 1:Yes,needs_codebook_validation
+b4_kw2.dta,kw02ix,category,11269,92.46,1:Given | 8:Don't know,needs_codebook_validation
+b4_kw2.dta,kw02imt,float64,11301,92.72,6.0 | 4.0 | 98.0 | 10.0 | 12.0,needs_codebook_validation
+b4_kw2.dta,kw02iyr,float64,11301,92.72,2006.0 | 1991.0 | 1977.0 | 1986.0 | 2005.0,needs_codebook_validation
+b4_kw2.dta,kw02j,category,11269,92.46,1:Yes | 3:No,needs_codebook_validation
+b4_kw2.dta,kw02lx,category,12185,99.98,1:Given,needs_codebook_validation
+b4_kw2.dta,kw02lmt,float64,12185,99.98,98.0 | 12.0,needs_codebook_validation
+b4_kw2.dta,kw02lyr,float64,12185,99.98,2009.0 | 2014.0 | 2012.0,needs_codebook_validation
+b4_kw2.dta,kw02mx,category,12185,99.98,1:Given,needs_codebook_validation
+b4_kw2.dta,kw02n,category,12185,99.98,3:Jr high general (SMP Umum) | 61:University S1 | 2:Elementary (SD),needs_codebook_validation
+b4_kw2.dta,kw02o,category,12185,99.98,7:Graduated | 3,needs_codebook_validation
+b4_kw2.dta,kw14,category,12185,99.98,1:Yes => KW08 | 3:No  => KW23A,needs_codebook_validation
+b4_kw2.dta,kw12a,object,0,0.0,W | B |  | E | BEGI,needs_codebook_validation
+b4_kw2.dta,kw12bx,category,7912,64.92,1:Enter value | 8:Don't know | 2:Other currency,needs_codebook_validation
+b4_kw2.dta,kw12d2,object,0,0.0,W |  | G | E | I,needs_codebook_validation
+b4_kw2.dta,kw13b,category,9343,76.66,1:Rupiah given | 8:Don't know | 2:Other currency,needs_codebook_validation
+b4_kw2.dta,kw14x,category,7685,63.05,1:Enter value | 8:Don't know,needs_codebook_validation
+b4_kw2.dta,kw13bx,category,7685,63.05,"1:YES, moved within the same village/town | 3:NO,lived at the same place | 2:YES, moved to another village/town",needs_codebook_validation
+b4_kw2.dta,kw14ba1,float64,10277,84.32,1.0 | 3.0 | 8.0 | 9.0,needs_codebook_validation
+b4_kw2.dta,kw14bbx,float64,10277,84.32,1.0 | 3.0 | 8.0 | 9.0,needs_codebook_validation
+b4_kw2.dta,kw14bcx,float64,10277,84.32,1.0 | 3.0 | 8.0 | 9.0,needs_codebook_validation
+b4_kw2.dta,kw14bdx,float64,10277,84.32,3.0 | 8.0 | 1.0,needs_codebook_validation
+b4_kw2.dta,kw14bd1,float64,10277,84.32,12.0 | 98.0 | 14.0 | 21.0 | 32.0,needs_codebook_validation
+b4_kw2.dta,kw14bc1,float64,10277,84.32,14.0 | 1.0 | 7.0 | 3.0 | 77.0,needs_codebook_validation
+b4_kw2.dta,kw14bb1,float64,10277,84.32,990.0 | 62.0 | 60.0 | 34.0 | 130.0,needs_codebook_validation
+b4_kw2.dta,kw14ba,float64,10277,84.32,992.0 | 10.0 | 6.0 | 3.0 | 19.0,needs_codebook_validation
+b4_kw2.dta,kw14cx,category,7685,63.05,1:Given | 96:Still live there | 98:Don't know,needs_codebook_validation
+b4_kw2.dta,kw14c,float64,10641,87.31,2.0 | 10.0 | 5.0 | 1.0 | 56.0,needs_codebook_validation
+b4_kw2.dta,kw14c1,category,10641,87.31,6:Years | 4:Weeks | 5:Months,needs_codebook_validation
+b4_kw2.dta,kw14d,category,7685,63.05,3:No | 1:Yes,needs_codebook_validation
+b4_kw2.dta,kw14d1,category,7685,63.05,3:No | 1:Yes,needs_codebook_validation
+b4_kw2.dta,kw14d2x,float64,12111,99.37,1.0 | 98.0,needs_codebook_validation
+b4_kw2.dta,kw14d2,float64,12114,99.39,6.0 | 1.0 | 2.0 | 12.0 | 4.0,needs_codebook_validation
+b4_kw2.dta,kw14d21,float64,12114,99.39,5.0 | 4.0 | 6.0,needs_codebook_validation
+b4_kw2.dta,kw14e,category,7685,63.05,1:Yes | 3:No,needs_codebook_validation
+b4_kw2.dta,kw14fx,category,12101,99.29,1:Given | 96:Don't live together yet | 98:Don't know,needs_codebook_validation
+b4_kw2.dta,kw14f,float64,12126,99.49,2.0 | 18.0 | 1.0 | 3.0 | 5.0,needs_codebook_validation
+b4_kw2.dta,kw14f1,category,12126,99.49,5:Months | 4:Weeks | 6:Years,needs_codebook_validation
+b4_kw2.dta,kw14g,object,0,0.0,W | C | CFG |  | J,needs_codebook_validation
+b4_kw2.dta,kw04,category,7685,63.05,1:Parent | 3:Self | 4:Family | 95:Other,needs_codebook_validation
+b4_kw2.dta,hhid14,object,0,0.0,0010651 | 0010600 | 0010851 | 0012200 | 0012241,needs_codebook_validation
+b4_kw2.dta,pidlink,object,0,0.0,001060004 | 001060007 | 001080012 | 001220002 | 001220011,needs_codebook_validation
+b4_kw2.dta,kw02m,float64,12185,99.98,9500000.0 | 30000000.0 | 5000000.0,needs_codebook_validation
+b4_kw2.dta,kw12b,float64,8084,66.33,10000000.0 | 500000.0 | 100000.0 | 1000000.0 | 35000000.0,needs_codebook_validation
+b4_kw2.dta,kw13a,float64,9550,78.36,250000.0 | 100000.0 | 1500000.0 | 3000.0 | 200000.0,needs_codebook_validation
+b4_kw2.dta,kw08,float64,8223,67.47,200000.0 | 500000.0 | 0.0 | 2000000.0 | 6000000.0,needs_codebook_validation
+b4_kw2.dta,kw23ax,category,2,0.02,95:Up to God | 1:Given,needs_codebook_validation
+b4_kw2.dta,kw23a,float64,496,4.07,6.0 | 10.0 | 4.0 | 3.0 | 5.0,needs_codebook_validation
+b4_kw2.dta,kw23bx,category,2,0.02,1:Given | 96:Never Menstruated | 99:Missing,needs_codebook_validation
+b4_kw2.dta,kw23b,float64,10,0.08,15.0 | 14.0 | 12.0 | 17.0 | 16.0,needs_codebook_validation
+b4_kw2.dta,kw23c,category,10,0.08,1:AGE <35 | 3:AGE >= 35,needs_codebook_validation
+b4_kw2.dta,kw23d,category,5901,48.42,"1:Yes | 3:Not anymore | 2:No (because of medication, contraception method, etc)",needs_codebook_validation
+b4_kw2.dta,kw23e,category,10442,85.67,38.0 | 53.0 | 45.0 | 46.0 | 44.0,needs_codebook_validation
+b4_kw2.dta,kw24a,category,1748,14.34,1:Yes | 3:No,needs_codebook_validation
+b4_kw2.dta,kw24b,category,10972,90.02,3:No | 1:Yes,needs_codebook_validation
+b4_kw2.dta,kw25,category,1748,14.34,1:Yes | 3:No,needs_codebook_validation
+b4_kw2.dta,kw26x,category,6706,55.02,95:Up to God | 1:Given,needs_codebook_validation
+b4_kw2.dta,kw26,float64,6823,55.98,3.0 | 2.0 | 4.0 | 1.0 | 0.0,needs_codebook_validation
+b4_kw2.dta,kw27x,category,6706,55.02,95:Up to God | 1:Given,needs_codebook_validation
+b4_kw2.dta,kw27a,float64,7201,59.08,1.0 | 2.0 | 0.0 | 3.0 | 5.0,needs_codebook_validation
+b4_kw2.dta,kw27b,float64,7201,59.08,2.0 | 1.0 | 0.0 | 3.0 | 4.0,needs_codebook_validation
+b4_kw2.dta,version,float64,0,0.0,1.3,needs_codebook_validation
+b4_kw2.dta,module,object,0,0.0,B4_KW2,needs_codebook_validation
+b4_kw3.dta,hhid14_9,object,0,0.0,001060004 | 001060000 | 001080003 | 001224100 | 001240005,needs_codebook_validation
+b4_kw3.dta,pid14,float64,0,0.0,1.0 | 7.0 | 2.0 | 25.0 | 11.0,needs_codebook_validation
+b4_kw3.dta,kwn_num,category,0,0.0,1:Current/latest | 2:Second latest | 3:Third latest | 4:Fourth latest | 5:Fifth latest,needs_codebook_validation
+b4_kw3.dta,kw10x,category,0,0.0,1:Given | 8:Don't Know,needs_codebook_validation
+b4_kw3.dta,kw10mth,float64,186,3.16,98.0 | 7.0 | 12.0 | 1.0 | 4.0,needs_codebook_validation
+b4_kw3.dta,kw10yr,category,186,3.16,2006.0 | 1993.0 | 1994.0 | 1996.0 | 2010.0,needs_codebook_validation
+b4_kw3.dta,kw11,category,5698,96.84,17.0 | 22.0 | 10.0 | 28.0 | 25.0,needs_codebook_validation
+b4_kw3.dta,kw11a,category,0,0.0,3:No | 1:Yes,needs_codebook_validation
+b4_kw3.dta,kw11b,category,0,0.0,5:Married formal according to adat law | 3:Married formal (KUA or civil registration) | 4:Married formal according to religious law | 8:Widow/Widower | 7:Divorced,needs_codebook_validation
+b4_kw3.dta,kw18x,category,4979,84.62,1:Date given | 8:Don't Know,needs_codebook_validation
+b4_kw3.dta,kw18mth,float64,5016,85.25,9.0 | 6.0 | 4.0 | 11.0 | 10.0,needs_codebook_validation
+b4_kw3.dta,kw18yr,category,5016,85.25,2009.0 | 2001.0 | 2012.0 | 2013.0 | 1996.0,needs_codebook_validation
+b4_kw3.dta,kw19,category,5847,99.37,98:Don't Know | 38.0 | 50.0 | 25.0 | 16.0,needs_codebook_validation
+b4_kw3.dta,kw20,category,0,0.0,3:Jr high general (SMP Umum) | 2:Elementary (SD) | 61:University S1 | 1:Unschooled | 4:Jr high vocational (SMP Kejuruan),needs_codebook_validation
+b4_kw3.dta,kw21,category,0,0.0,2 | 4 | 1 | 3 | 0:Did not complete 1st grade at that level,needs_codebook_validation
+b4_kw3.dta,kw22x,category,0,0.0,3:New Respondent | 1:Panel,needs_codebook_validation
+b4_kw3.dta,kw22a,category,4515,76.73,2:Marriage began before 2007 -> KW23A | 1:Marriage began after after 2006 - > NEXT COLUMN | 3:No other marriage after 2007 -> KW23A,needs_codebook_validation
+b4_kw3.dta,kw22b,category,1369,23.27,3:No other marriage | 1:Other marriage,needs_codebook_validation
+b4_kw3.dta,hhid14,object,0,0.0,0010651 | 0010600 | 0010851 | 0012241 | 0012451,needs_codebook_validation
+b4_kw3.dta,pidlink,object,0,0.0,001060004 | 001060007 | 001080012 | 001220011 | 001240005,needs_codebook_validation
+b4_kw3.dta,version,float64,0,0.0,1.3,needs_codebook_validation
+b4_kw3.dta,module,object,0,0.0,B4_KW3,needs_codebook_validation
+b4_time.dta,hhid14_9,object,0,0.0,001060004 | 001060000 | 001080003 | 001220000 | 001224100,needs_codebook_validation
+b4_time.dta,pid14,float64,0,0.0,1.0 | 7.0 | 2.0 | 25.0 | 8.0,needs_codebook_validation
+b4_time.dta,time_occ,float64,0,0.0,1.0 | 2.0 | 3.0 | 4.0 | 5.0,needs_codebook_validation
+b4_time.dta,ivwday,float64,0,0.0,15.0 | 7.0 | 8.0 | 9.0 | 23.0,needs_codebook_validation
+b4_time.dta,ivwmth,float64,0,0.0,6.0 | 12.0 | 8.0 | 4.0 | 9.0,needs_codebook_validation
+b4_time.dta,ivwyr,float64,0,0.0,2015.0 | 2014.0,needs_codebook_validation
+b4_time.dta,beghr,float64,0,0.0,8.0 | 13.0 | 17.0 | 14.0 | 11.0,needs_codebook_validation
+b4_time.dta,begmin,float64,0,0.0,32.0 | 17.0 | 54.0 | 40.0 | 49.0,needs_codebook_validation
+b4_time.dta,endhr,float64,0,0.0,9.0 | 14.0 | 18.0 | 15.0 | 12.0,needs_codebook_validation
+b4_time.dta,endmin,float64,0,0.0,12.0 | 41.0 | 45.0 | 29.0 | 32.0,needs_codebook_validation
+b4_time.dta,hhid14,object,0,0.0,0010651 | 0010600 | 0010851 | 0012200 | 0012241,needs_codebook_validation
+b4_time.dta,pidlink,object,0,0.0,001060004 | 001060007 | 001080012 | 001220002 | 001220011,needs_codebook_validation
+b4_time.dta,version,float64,0,0.0,1.3,needs_codebook_validation
+b4_time.dta,module,object,0,0.0,B4_TIME,needs_codebook_validation

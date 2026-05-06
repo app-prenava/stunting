@@ -1,0 +1,92 @@
+DATA PREPROCESSING NOTE
+
+Seluruh variabel pada dataset telah dilakukan proses renaming untuk meningkatkan keterbacaan dan konsistensi dalam analisis machine learning. 
+Penamaan variabel menggunakan format snake_case dalam bahasa Inggris tanpa mengubah makna asli variabel sesuai dengan codebook IFLS5.
+
+
+----------------------------------------
+
+VARIABLE MAPPING
+
+hhid14 → household_id  
+pid14 (child) → child_id  
+pidlink (child) → child_unique_id  
+age (child) → child_age  
+sex → child_gender  
+
+ar11 → mother_reference_line  
+
+pid14 (mother) → mother_pid14  
+pidlink (mother) → mother_pidlink  
+age (mother) → mother_age  
+
+
+----------------------------------------
+
+DATA DICTIONARY - IFLS5 (STEP 1)
+
+household_id  
+Deskripsi: ID unik rumah tangga  
+Sumber: hhid14  
+Dataset: hh14_b5_dta (Book 5 – Individual Child)  
+Referensi: Volume 8 – IFLS5_hh_codebooks  
+
+child_id  
+Deskripsi: ID individu anak dalam rumah tangga  
+Sumber: pid14  
+Dataset: hh14_b5_dta (Book 5 – Individual Child)  
+Referensi: Volume 8 – IFLS5_hh_codebooks  
+
+child_unique_id  
+Deskripsi: ID unik individu (digunakan untuk tracking antar individu)  
+Sumber: pidlink  
+Dataset: hh14_b5_dta (Book 5 – Individual Child)  
+Referensi: Volume 2 – IFLS5_User_Guide_Vol_2  
+
+child_age  
+Deskripsi: Umur anak dalam tahun  
+Sumber: age  
+Dataset: hh14_b5_dta (Book 5 – Individual Child)  
+Referensi: Volume 4 / 6 – IFLS5_HH_PQX_Public  
+
+child_gender  
+Deskripsi: Jenis kelamin anak  
+Sumber: sex  
+Dataset: hh14_b5_dta (Book 5 – Individual Child)  
+Referensi: Volume 4 / 6 – IFLS5_HH_PQX_Public  
+
+mother_reference_line  
+Deskripsi: Nomor baris ibu dalam household roster  
+Sumber: ar11  
+Dataset: hh14_bk_dta (Book K – Household Roster / Control Book)  
+Catatan: digunakan untuk menghubungkan anak dengan ibu kandung  
+Referensi: Volume 8 – IFLS5_hh_codebooks  
+
+mother_pid14  
+Deskripsi: ID ibu dalam rumah tangga  
+Sumber: hasil mapping dari ar11 → pid14  
+Dataset: hh14_bk_dta + hh14_b4_dta  
+Referensi: Volume 8 – IFLS5_hh_codebooks  
+
+mother_pidlink  
+Deskripsi: ID unik individu ibu  
+Sumber: pidlink  
+Dataset: hh14_b4_dta (Book 4 – Individual Female Adult)  
+Referensi: Volume 2 – IFLS5_User_Guide_Vol_2  
+
+mother_age  
+Deskripsi: Umur ibu dalam tahun  
+Sumber: age  
+Dataset: hh14_b4_dta (Book 4 – Individual Female Adult)  
+Referensi: Volume 4 / 6 – IFLS5_HH_PQX_Public  
+
+
+----------------------------------------
+
+PIPELINE CONTEXT
+
+Step 1:
+Menggabungkan data anak dengan data ibu menggunakan household roster.
+
+Tujuan:
+Membangun dataset relasional berbasis faktor maternal sebagai dasar analisis risiko stunting.

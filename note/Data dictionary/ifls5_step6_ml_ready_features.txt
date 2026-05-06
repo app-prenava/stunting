@@ -1,0 +1,154 @@
+DATA DICTIONARY - IFLS5 (STEP 6: ML READY FEATURES)
+
+child_gender
+Deskripsi: Jenis kelamin anak
+Sumber: sex (Step 1)
+Dataset: hh14_b5_dta
+Referensi: Volume 4 / 6 – IFLS5_HH_PQX_Public
+Status: Transformed
+Catatan:
+- 1 = Laki-laki
+- 0 = Perempuan
+Sudah dikonversi ke format numerik untuk machine learning.
+
+mother_education_level
+Deskripsi: Tingkat pendidikan ibu (ordinal)
+Sumber: ar16 (Step 4)
+Dataset: hh14_bk_dta (Household Roster)
+Referensi: Volume 8 – IFLS5_hh_codebooks
+Status: Transformed
+Catatan:
+Mapping ordinal:
+0 = Tidak sekolah  
+1 = SD  
+2 = SMP  
+3 = SMA  
+4 = Diploma  
+5 = Universitas  
+
+mother_employment_status
+Deskripsi: Status pekerjaan ibu
+Sumber: ar15c (Step 4)
+Dataset: hh14_bk_dta
+Referensi: Volume 8 – IFLS5_hh_codebooks
+Status: Transformed
+Catatan:
+- 1 = Bekerja
+- 0 = Tidak bekerja
+Missing kecil (~0.5%) diimputasi sebagai 0 (tidak bekerja).
+
+mother_age_at_birth
+Deskripsi: Usia ibu saat melahirkan anak
+Sumber: mother_age (Step 1) dan age_in_months (Step 5)
+Dataset: Derived
+Referensi: -
+Status: Derived
+Catatan:
+Dihitung menggunakan:
+mother_age - (age_in_months / 12)
+
+is_teenage_mother
+Deskripsi: Indikator ibu remaja
+Sumber: Derived dari mother_age_at_birth
+Dataset: Derived
+Status: Derived
+Catatan:
+- 1 = Usia < 20 tahun
+- 0 = Usia ≥ 20 tahun
+
+is_high_risk_mother_age
+Deskripsi: Indikator usia ibu berisiko
+Sumber: Derived dari mother_age_at_birth
+Dataset: Derived
+Status: Derived
+Catatan:
+- 1 = Usia < 18 atau > 35 tahun
+- 0 = Selain itu
+
+has_delivery_insurance
+Deskripsi: Kepemilikan asuransi saat melahirkan
+Sumber: delivery_insurance (Step 3)
+Dataset: b4_ch1.dta
+Referensi: IFLS5 Book 4
+Status: Transformed
+Catatan:
+- 1 = Memiliki asuransi
+- 0 = Tidak memiliki
+
+anc_clinic_midwife
+Deskripsi: ANC dilakukan di klinik atau bidan
+Sumber: anc_location (Step 3)
+Dataset: b4_ch1.dta
+Status: Transformed (One-hot encoding)
+
+anc_hospital
+Deskripsi: ANC dilakukan di rumah sakit
+Sumber: anc_location (Step 3)
+Dataset: b4_ch1.dta
+Status: Transformed (One-hot encoding)
+
+anc_traditional_other
+Deskripsi: ANC dilakukan di fasilitas non-medis (dukun/lainnya)
+Sumber: anc_location (Step 3)
+Dataset: b4_ch1.dta
+Status: Transformed (One-hot encoding)
+
+anc_unknown
+Deskripsi: Lokasi ANC tidak diketahui
+Sumber: anc_location (Step 3)
+Dataset: b4_ch1.dta
+Status: Transformed (One-hot encoding)
+
+is_stunted
+Deskripsi: Status stunting anak (target variable)
+Sumber: haz_score (Step 5)
+Dataset: Derived
+Referensi: WHO Child Growth Standards
+Status: Final Target
+Catatan:
+- 1 = Stunted (HAZ < -2 SD)
+- 0 = Normal (HAZ ≥ -2 SD)
+
+
+PIPELINE CONTEXT:
+Step 6:
+Melakukan preprocessing akhir dan feature engineering untuk menghasilkan dataset siap machine learning.
+
+Tujuan:
+Mengubah seluruh variabel menjadi numerik, menghilangkan missing value, dan memastikan tidak ada data leakage.
+
+
+TRANSFORMASI YANG DILAKUKAN:
+
+1. Encoding:
+   - Binary encoding (0/1)
+   - Ordinal encoding (pendidikan)
+   - One-hot encoding (ANC)
+
+2. Feature Engineering:
+   - mother_age_at_birth
+   - is_teenage_mother
+   - is_high_risk_mother_age
+
+3. Cleaning:
+   - Menghapus missing value kritikal
+   - Imputasi ringan pada fitur non-kritikal
+   - Menghapus kolom non-relevan (ID, raw features)
+
+
+VALIDATION NOTE:
+
+- Semua fitur telah dalam format numerik
+- Tidak terdapat missing values
+- Tidak terdapat data leakage (haz_score tidak digunakan sebagai fitur)
+- Dataset siap untuk training machine learning
+
+
+Hasil Validasi:
+
+rows_input: 5244  
+rows_final: 5068  
+total_features: 11 (predictor) + 1 (target)  
+
+Catatan:
+Dataset final siap digunakan untuk Step 7 (Modeling).
