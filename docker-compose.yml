@@ -1,11 +1,26 @@
 version: '3.8'
 
 services:
-  api:
+  stunting-api:
     build: .
-    container_name: stunting
+    container_name: stunting-api
     ports:
       - "2727:8000"
     restart: unless-stopped
     environment:
       - PYTHONUNBUFFERED=1
+      # Limit SHAP/NumPy threads per worker to avoid CPU contention
+      - OMP_NUM_THREADS=1
+      - OPENBLAS_NUM_THREADS=1
+      - MKL_NUM_THREADS=1
+    # Health check: verify model loaded before routing traffic
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s   # Give gunicorn+preload time to fully load model
+    deploy:
+      resources:
+        limits:
+          memory: 1G     # Adjust based on your model size
