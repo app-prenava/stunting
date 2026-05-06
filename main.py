@@ -251,7 +251,7 @@ def _compute_shap_top_factors(df: pd.DataFrame, top_n: int = 5) -> dict:
         top_factors = []
         for feature, val in pairs[:top_n]:
             impact = "increase_risk" if val > 0 else "decrease_risk"
-            input_val = df[feature].iloc[0]
+            input_val = float(df[feature].iloc[0])
             
             # Simple human message based on impact
             msg = f"{feature} berkontribusi terhadap {impact.replace('_', ' ')}"
