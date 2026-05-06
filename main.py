@@ -8,6 +8,7 @@ Production-optimized FastAPI service.
 
 import time
 import logging
+import traceback
 from contextlib import asynccontextmanager
 from pathlib import Path
 
@@ -319,30 +320,56 @@ def features():
 @app.post("/predict")
 def predict(data: StuntingInput):
     _assert_ready()
-
     t_total = time.perf_counter()
 
     try:
-        # Pydantic v1/v2 compatibility
-        input_dict = data.model_dump() if hasattr(data, 'model_dump') else data.dict()
-        
-        # Enforce strict FEATURE_ORDER
-        df = pd.DataFrame([input_dict])[FEATURE_ORDER]
+        # 1. Parse Payload
+        payload = data.model_dump() if hasattr(data, 'model_dump') else data.dict()
+        print("\n" + "="*50)
+        print("DEBUG: NEW PREDICTION REQUEST")
+        print("PAYLOAD:", payload)
+        print("FEATURE ORDER:", FEATURE_ORDER)
 
-        # --- Inference ---
+        # 2. Build Input Array (Strict (1, 18) shape and float32)
+        try:
+            input_list = [float(payload[f]) for f in FEATURE_ORDER]
+            input_array = np.array([input_list], dtype=np.float32)
+            print("INPUT ARRAY:", input_array)
+            print("SHAPE:", input_array.shape)
+            print("DTYPE:", input_array.dtype)
+        except KeyError as ke:
+            raise HTTPException(status_code=422, detail=f"Missing feature: {str(ke)}")
+
+        # 3. Model Inference
         t_inf = time.perf_counter()
-        probability = float(model.predict_proba(df)[0][1])
-        prediction  = int(probability >= threshold)
+        
+        # LogisticRegression prediction
+        raw_prediction = model.predict(input_array)
+        prediction = int(raw_prediction[0])
+        
+        # LogisticRegression probability
+        raw_proba = model.predict_proba(input_array)
+        probability = float(raw_proba[0][1])
+        
         inf_ms = round((time.perf_counter() - t_inf) * 1000)
+        print("PREDICTION:", prediction)
+        print("PROBABILITY:", probability)
 
-        # --- SHAP (detailed format) ---
-        explanation = _compute_shap_top_factors(df, top_n=5)
+        # 4. SHAP Explanation (Safe fallback)
+        explanation = None
+        if explainer is not None:
+            try:
+                # Use DataFrame for SHAP to keep feature names
+                df_shap = pd.DataFrame(input_array, columns=FEATURE_ORDER)
+                explanation = _compute_shap_top_factors(df_shap, top_n=5)
+            except Exception as shap_error:
+                print("SHAP ERROR:", str(shap_error))
+                traceback.print_exc()
+                explanation = None
 
         total_ms = round((time.perf_counter() - t_total) * 1000)
-        logger.info(
-            "predict OK  prob=%.4f pred=%d  inf=%dms  total=%dms",
-            probability, prediction, inf_ms, total_ms,
-        )
+        print(f"TOTAL LATENCY: {total_ms}ms")
+        print("="*50 + "\n")
 
         return {
             "prediction":    prediction,
@@ -353,6 +380,14 @@ def predict(data: StuntingInput):
             "recommendations": []
         }
 
-    except Exception as exc:
-        logger.exception("Prediction error: %s", exc)
-        raise HTTPException(status_code=500, detail=str(exc))
+    except HTTPException:
+        raise
+    except Exception as e:
+        print("\n" + "!"*50)
+        print("PREDICT ERROR:", str(e))
+        traceback.print_exc()
+        print("!"*50 + "\n")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Inference Error: {str(e)}"
+        )
