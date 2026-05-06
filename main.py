@@ -60,6 +60,73 @@ def _build_input_model(columns: list) -> type:
     return _Fallback
 
 
+# Linear model classes that need LinearExplainer
+_LINEAR_MODEL_TYPES = (
+    "LogisticRegression",
+    "LinearSVC",
+    "LinearSVR",
+    "Ridge",
+    "Lasso",
+    "ElasticNet",
+    "SGDClassifier",
+    "SGDRegressor",
+    "BayesianRidge",
+    "ARDRegression",
+)
+
+# Tree-based model classes that need TreeExplainer
+_TREE_MODEL_TYPES = (
+    "RandomForestClassifier",
+    "RandomForestRegressor",
+    "ExtraTreesClassifier",
+    "ExtraTreesRegressor",
+    "GradientBoostingClassifier",
+    "GradientBoostingRegressor",
+    "XGBClassifier",
+    "XGBRegressor",
+    "LGBMClassifier",
+    "LGBMRegressor",
+    "CatBoostClassifier",
+    "CatBoostRegressor",
+    "DecisionTreeClassifier",
+    "DecisionTreeRegressor",
+)
+
+
+def _build_explainer(fitted_model: object, columns: list) -> object:
+    """
+    Auto-detect and build the correct SHAP explainer for the fitted model.
+
+    Priority:
+      1. LinearExplainer  — for linear/GLM models (fast, exact)
+      2. TreeExplainer    — for tree-based models (fast, exact)
+      3. KernelExplainer  — universal fallback (slow, approximate)
+    """
+    model_name = type(fitted_model).__name__
+
+    if model_name in _LINEAR_MODEL_TYPES:
+        logger.info("Using shap.LinearExplainer for %s", model_name)
+        # LinearExplainer needs a masker — use the feature distribution (interventional)
+        import numpy as np
+        # Use a zero-vector background as a simple but valid masker
+        background = np.zeros((1, len(columns)))
+        return shap.LinearExplainer(fitted_model, background)
+
+    if model_name in _TREE_MODEL_TYPES:
+        logger.info("Using shap.TreeExplainer for %s", model_name)
+        return shap.TreeExplainer(fitted_model)
+
+    # Unknown model type — use KernelExplainer with a minimal background
+    logger.warning(
+        "Unknown model type '%s'. Falling back to KernelExplainer (slow). "
+        "Add it to _LINEAR_MODEL_TYPES or _TREE_MODEL_TYPES if inference is too slow.",
+        model_name,
+    )
+    import numpy as np
+    background = shap.maskers.Independent(np.zeros((1, len(columns))), max_samples=1)
+    return shap.KernelExplainer(fitted_model.predict_proba, background)
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Load model + SHAP explainer ONCE at startup."""
@@ -79,13 +146,16 @@ async def lifespan(app: FastAPI):
         model = None
         feature_columns = []
 
-    # Build SHAP explainer at startup — avoid re-init per request
+    # Build SHAP explainer at startup — auto-detect correct type for model
     if model is not None:
         try:
             t_shap = time.perf_counter()
-            # TreeExplainer is the fastest for tree-based models (RF, XGBoost)
-            explainer = shap.TreeExplainer(model)
-            logger.info("SHAP TreeExplainer ready (%.2fs)", time.perf_counter() - t_shap)
+            explainer = _build_explainer(model, feature_columns)
+            logger.info(
+                "SHAP %s ready (%.2fs)",
+                type(explainer).__name__,
+                time.perf_counter() - t_shap,
+            )
         except Exception as exc:
             logger.warning("SHAP unavailable, falling back to KernelExplainer stub: %s", exc)
             explainer = None
@@ -124,22 +194,38 @@ async def log_request_timing(request: Request, call_next):
 # Helpers
 # ---------------------------------------------------------------------------
 def _compute_shap_top_factors(df: pd.DataFrame, top_n: int = 5) -> dict:
-    """Return top-N SHAP factors as {feature: shap_value} (lightweight)."""
+    """Return top-N SHAP factors as {feature: shap_value} (lightweight).
+
+    Handles output from:
+    - shap.LinearExplainer  → 2D ndarray (n_samples, n_features)
+    - shap.TreeExplainer    → 2D ndarray OR list of 2 arrays for binary classifiers
+    - shap.KernelExplainer  → 2D ndarray
+    """
     if explainer is None:
         return {}
     try:
+        import numpy as np
         t0 = time.perf_counter()
-        shap_values = explainer.shap_values(df)
+        raw = explainer.shap_values(df)
 
-        # For binary classifiers shap_values may be a list [class0, class1]
-        if isinstance(shap_values, list):
-            sv = shap_values[1][0]  # positive class, first sample
+        # Normalize to a flat 1D array for the first (only) sample
+        if isinstance(raw, list):
+            # Binary classifier: list of [class0_vals, class1_vals]
+            # Use class-1 (positive/stunting class) values
+            sv = np.array(raw[1])
         else:
-            sv = shap_values[0]     # single array, first sample
+            sv = np.array(raw)
+
+        # Shape may be (n_samples, n_features) or (n_features,)
+        if sv.ndim == 2:
+            sv = sv[0]  # first sample
 
         feature_names = df.columns.tolist()
-        pairs = sorted(zip(feature_names, sv.tolist()),
-                       key=lambda x: abs(x[1]), reverse=True)
+        pairs = sorted(
+            zip(feature_names, sv.tolist()),
+            key=lambda x: abs(x[1]),
+            reverse=True,
+        )
 
         result = {k: round(v, 6) for k, v in pairs[:top_n]}
         logger.info("SHAP computed (%.0fms)", (time.perf_counter() - t0) * 1000)
@@ -147,6 +233,7 @@ def _compute_shap_top_factors(df: pd.DataFrame, top_n: int = 5) -> dict:
     except Exception as exc:
         logger.warning("SHAP computation failed: %s", exc)
         return {}
+
 
 
 def _assert_ready():
