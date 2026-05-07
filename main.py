@@ -8,7 +8,6 @@ Production-optimized FastAPI service.
 
 import time
 import logging
-import traceback
 from contextlib import asynccontextmanager
 from pathlib import Path
 
@@ -17,7 +16,7 @@ import numpy as np
 import pandas as pd
 import shap
 from fastapi import FastAPI, HTTPException, Request
-from pydantic import BaseModel, create_model
+from pydantic import BaseModel
 
 logging.basicConfig(
     level=logging.INFO,
@@ -29,6 +28,8 @@ BASE_DIR    = Path(__file__).resolve().parent
 MODEL_PATH  = BASE_DIR / "models" / "stunting_model.pkl"
 FEATURE_PATH    = BASE_DIR / "models" / "feature_columns.pkl"
 THRESHOLD_PATH  = BASE_DIR / "models" / "stunting_threshold.pkl"
+IMPUTER_PATH    = BASE_DIR / "models" / "stunting_imputer.pkl"
+SCALER_PATH     = BASE_DIR / "models" / "stunting_scaler.pkl"
 
 # ---------------------------------------------------------------------------
 # Global singletons — loaded once at startup
@@ -37,6 +38,8 @@ model: object = None
 feature_columns: list = []
 threshold: float = 0.5
 explainer: object = None
+imputer: object = None
+scaler: object = None
 # ---------------------------------------------------------------------------
 # Models
 # ---------------------------------------------------------------------------
@@ -59,28 +62,6 @@ class StuntingInput(BaseModel):
     anc_hospital: int
     anc_traditional_other: int
     anc_unknown: int
-
-
-FEATURE_ORDER = [
-    "child_gender",
-    "mother_education_level",
-    "mother_employment_status",
-    "mother_height_cm",
-    "improved_water",
-    "improved_sanitation",
-    "home_ownership",
-    "has_electricity",
-    "has_refrigerator",
-    "has_tv",
-    "mother_age_at_birth",
-    "is_teenage_mother",
-    "is_high_risk_mother_age",
-    "has_delivery_insurance",
-    "anc_clinic_midwife",
-    "anc_hospital",
-    "anc_traditional_other",
-    "anc_unknown"
-]
 
 
 def _load_artifact(path: Path, default=None):
@@ -161,7 +142,7 @@ def _build_explainer(fitted_model: object, columns: list) -> object:
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Load model + SHAP explainer ONCE at startup."""
-    global model, feature_columns, threshold, explainer, StuntingInput
+    global model, feature_columns, threshold, explainer, imputer, scaler
 
     t0 = time.perf_counter()
     logger.info("Loading ML artifacts…")
@@ -170,8 +151,15 @@ async def lifespan(app: FastAPI):
         model           = _load_artifact(MODEL_PATH)
         feature_columns = _load_artifact(FEATURE_PATH)
         threshold       = float(_load_artifact(THRESHOLD_PATH, default=0.5))
+        imputer         = _load_artifact(IMPUTER_PATH, default=None)
+        scaler          = _load_artifact(SCALER_PATH, default=None)
         logger.info("Model loaded (type=%s, features=%d, threshold=%.4f)",
                     type(model).__name__, len(feature_columns), threshold)
+        logger.info(
+            "Preprocessing loaded (imputer=%s, scaler=%s)",
+            imputer is not None,
+            scaler is not None,
+        )
     except Exception as exc:
         logger.error("Failed to load model artifacts: %s", exc)
         model = None
@@ -273,6 +261,31 @@ def _compute_shap_top_factors(df: pd.DataFrame, top_n: int = 5) -> dict:
         return None
 
 
+def _prepare_input_dataframe(payload: dict) -> pd.DataFrame:
+    missing = [col for col in feature_columns if col not in payload]
+    if missing:
+        raise HTTPException(
+            status_code=422,
+            detail=f"Missing features: {', '.join(missing)}",
+        )
+    row = {col: float(payload[col]) for col in feature_columns}
+    return pd.DataFrame([row], columns=feature_columns)
+
+
+def _transform_for_model(df: pd.DataFrame) -> pd.DataFrame:
+    transformed = df
+    if imputer is not None:
+        transformed = imputer.transform(transformed)
+    if scaler is not None:
+        transformed = scaler.transform(transformed)
+    if isinstance(transformed, np.ndarray):
+        transformed = pd.DataFrame(
+            transformed,
+            columns=feature_columns,
+            index=df.index,
+        )
+    return transformed
+
 
 def _assert_ready():
     if model is None or not feature_columns:
@@ -305,8 +318,8 @@ def warmup():
     Call this after deploy to eliminate cold-start latency.
     """
     _assert_ready()
-    dummy = pd.DataFrame([{col: 0.0 for col in feature_columns}])
-    model.predict_proba(dummy)
+    dummy = pd.DataFrame([{col: 0.0 for col in feature_columns}], columns=feature_columns)
+    model.predict_proba(_transform_for_model(dummy))
     return {"status": "warm"}
 
 
@@ -323,71 +336,45 @@ def predict(data: StuntingInput):
     t_total = time.perf_counter()
 
     try:
-        # 1. Parse Payload
-        payload = data.model_dump() if hasattr(data, 'model_dump') else data.dict()
-        print("\n" + "="*50)
-        print("DEBUG: NEW PREDICTION REQUEST")
-        print("PAYLOAD:", payload)
-        print("FEATURE ORDER:", FEATURE_ORDER)
+        # 1. Parse payload and align to trained feature contract
+        payload = data.model_dump() if hasattr(data, "model_dump") else data.dict()
+        df_raw = _prepare_input_dataframe(payload)
+        df_model = _transform_for_model(df_raw)
 
-        # 2. Build Input Array (Strict (1, 18) shape and float32)
-        try:
-            input_list = [float(payload[f]) for f in FEATURE_ORDER]
-            input_array = np.array([input_list], dtype=np.float32)
-            print("INPUT ARRAY:", input_array)
-            print("SHAPE:", input_array.shape)
-            print("DTYPE:", input_array.dtype)
-        except KeyError as ke:
-            raise HTTPException(status_code=422, detail=f"Missing feature: {str(ke)}")
-
-        # 3. Model Inference
+        # 2. Model inference
         t_inf = time.perf_counter()
-        
-        # LogisticRegression prediction
-        raw_prediction = model.predict(input_array)
-        prediction = int(raw_prediction[0])
-        
-        # LogisticRegression probability
-        raw_proba = model.predict_proba(input_array)
+        raw_proba = model.predict_proba(df_model)
         probability = float(raw_proba[0][1])
-        
+        prediction = int(probability >= threshold)
         inf_ms = round((time.perf_counter() - t_inf) * 1000)
-        print("PREDICTION:", prediction)
-        print("PROBABILITY:", probability)
+        logger.info(
+            "Inference done (prob=%.4f, threshold=%.2f, pred=%d, %dms)",
+            probability,
+            threshold,
+            prediction,
+            inf_ms,
+        )
 
-        # 4. SHAP Explanation (Safe fallback)
-        explanation = None
-        if explainer is not None:
-            try:
-                # Use DataFrame for SHAP to keep feature names
-                df_shap = pd.DataFrame(input_array, columns=FEATURE_ORDER)
-                explanation = _compute_shap_top_factors(df_shap, top_n=5)
-            except Exception as shap_error:
-                print("SHAP ERROR:", str(shap_error))
-                traceback.print_exc()
-                explanation = None
-
+        # 3. SHAP explanation
+        explanation = _compute_shap_top_factors(df_model, top_n=5) if explainer is not None else None
         total_ms = round((time.perf_counter() - t_total) * 1000)
-        print(f"TOTAL LATENCY: {total_ms}ms")
-        print("="*50 + "\n")
+        logger.info("Prediction request complete (%dms)", total_ms)
 
         return {
-            "prediction":    prediction,
-            "risk_label":    "high_risk" if prediction == 1 else "low_risk",
-            "probability":   round(probability, 4),
-            "model_version": "lr_v1.0",
-            "explanation":   explanation,
-            "recommendations": []
+            "prediction": prediction,
+            "risk_label": "high_risk" if prediction == 1 else "low_risk",
+            "probability": round(probability, 4),
+            "threshold": round(float(threshold), 4),
+            "model_version": f"{type(model).__name__}_v1",
+            "explanation": explanation,
+            "recommendations": [],
         }
 
     except HTTPException:
         raise
-    except Exception as e:
-        print("\n" + "!"*50)
-        print("PREDICT ERROR:", str(e))
-        traceback.print_exc()
-        print("!"*50 + "\n")
+    except Exception as exc:
+        logger.exception("Prediction failed: %s", exc)
         raise HTTPException(
             status_code=500,
-            detail=f"Inference Error: {str(e)}"
+            detail="Inference error."
         )
