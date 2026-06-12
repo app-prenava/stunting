@@ -1,0 +1,329 @@
+
+--- b1_ks0.dta ---
+ks02a: During the past week, what was the total expenditure to purchase [...]?
+ks10aa: Approwhat was the total expenditures  for school fees for children/family member
+
+--- b1_ks2.dta ---
+ks06: What were the total expenditures by all household members for [...] during the p
+
+--- b1_ks3.dta ---
+ks08: What were the total expenditures by all household members for [...] during the p
+
+--- bus_cov.dta ---
+us02day: Date of birth (day)
+us02mth: Date of birth (month)
+us02yr: Date of birth (year)
+
+--- bus_us.dta ---
+us06_0: INTRO: WEIGHT AND HEIGHT MEASUREMENT
+us06x: Weight measured?
+us06: Weight (kg)
+us06_cd: Code of reason why weight was not  measured
+us05_00: INTRO: UPPER ARM LENGTH
+us05cx: measuring the length of the upper arm
+us05c: Measuring the length of the upper arm
+us05c_cd: Reason not measuring the length of the upper arm
+us18aa: Take medicine for anemia
+us19k: Record the type of floor surface the balance measure was conducted on:
+us19o: Record the type of floor surface the balance measure was conducted on:
+us19s: Record the type of floor surface the walking speed test conducted on:
+us13_0: INTRO: HB LEVEL MEASUREMENT
+us13x: Hb measurement
+us13: Hb measurement
+us13_cd: Reason Hb measurement not done
+us15a: Check if pregnant
+us15c: Check if breastfeeding
+
+--- bk_ar1.dta ---
+ar15bx: What was HHM's income from work in the last 12 months?
+ar15b: What was HHM's income from work in the last 12 months?
+ar08day: Date of birth of HH member
+ar08mth: Month of birth of HH member
+ar08yr: Year of birth of HH member
+
+--- bk_krk.dta ---
+krk02c: Interviewer Obsservation: House is surrended by stagnant water
+krk08: Interviewer Observation: Main material of floor
+krk09: Interviewer Observation: material used in the outer walls
+
+--- b2_hi.dta ---
+hitype: Type of Income
+hi14x: What is the total non-labor income the HH received from [...] during the past 12
+hi14: What is the total non-labor income the HH received from [...] during the past 12
+
+--- b2_hr1.dta ---
+hr05x: What is the total income from the rent/lease/interest/ profit sharing of [...] i
+hr05: What is the total income from the rent/lease/interest/ profit sharing of [...] i
+
+--- b2_kr.dta ---
+kr13: What is the main water source for drinking for this household?
+kr13a: Before the water is used for drinking, is it boiled?
+kr13b: Do you purchase water?
+kr14: Where is the main water source located?
+kr16: Is water used for other necessities, like bathing and laundry, also drawn from t
+kr17: What is the main source of water for other necessities like bathing and laundry?
+kr17b: Do you purchase the water?
+kr18: Where is the main water source located?
+kr20: Where do the majority of householders go to the toilet?
+
+--- b2_ut2.dta ---
+ut07h: What was the main source of water for the [...] crop?
+
+--- b2_ut4.dta ---
+ut14x: What is the total income from the rent/lease/profit-sharing of [...] in the past
+ut14: What is the total income from the rent/lease/profit-sharing of [...] in the past
+ut11x_e: E- value of: Vehicles (bicycles, motor bikes, car/truck and water vehicles) (abl
+ut11x_e1: E1-value of: Vehicles (bicycles, motor bikes, car/truck and water vehicles) (abl
+ut11_e: E- value of: Vehicles (bicycles, motor bikes, car/truck and water vehicles)
+ut11_e1: E1-value of: Vehicles (bicycles, motor bikes, car/truck and water vehicles)
+ut11p_e1: E1-value of: Vehicles (bicycles, motor bikes, car/truck and water vehicles) (bra
+
+--- b3a_br1.dta ---
+br01: Have you ever given birth?
+br11: Have you had a stillbirth?
+br12: # of stillbirths you have had
+br13: Have you had any miscarriages?
+br14: # of miscarriages you have had
+br15: Total number of live births
+br15x: Ivw Chk: Tot # of live births
+br16: Total stillbirths & miscarriages
+br16x: Ivw Chk: # still births & miscarriages
+
+--- b3a_cov.dta ---
+dob_day: Date of birth - day
+dob_mth: Date of birth - month
+dob_yr: Date of birth - year
+birth_cert: Do you have a birth certificate
+birth_cert_reas: Main reason not have a birth certificate
+
+--- b3a_hi.dta ---
+hitype: Type of Income
+hi14x: What is the total non-labor income the HH received from [...] during the past 12
+hi14: What is the total non-labor income the HH received from [...] during the past 12
+
+--- b3a_hr0.dta ---
+hr300b: hr300b.Are you currently married?
+
+--- b3a_hr1.dta ---
+hr05x: hr305x.What is the total income from the rent/lease/interest/ profit sharing of
+hr05: hr305.What is the total income from the rent/lease/interest/ profit sharing of [
+
+--- b3a_kw1.dta ---
+kw00d: Since the 2007 interview have you had any changes in your marriage status?
+kw02a1: Do you have a marriage certificate with [...]
+kw02jx: What was the date of your current/most recent marriage? (able to answer)
+kw02jmth: What was the date of your current/most recent marriage? (month)
+kw02jyr: What was the date of your current/most recent marriage? (year)
+kw02k: Ivwr check: year at recent marriage was before 2000
+kw12a: What was the bride price/dowry for your current/ most recent marriage?
+kw12bx: What was value of dowry at time of marriage? (able to answer)
+kw14x: Whats value of assets you owned before marriage? (able to answer)
+kw14c: Length of time resided at 1st residence after wedding
+kw14d: Did your spouse change residence after marriage?
+kw12d2: Length of time you live together before the weding
+kw03: How many times have you been married?
+kw04: Who chose your (1st marriage) spouse?
+kw09x: Total number of marriages
+kw23: Ivw: Rs sex/marriage status
+kw12b: What was value of dowry at time of marriage?
+kw14: Whats value of assets you owned before marriage?
+
+--- b3a_kw3.dta ---
+kwn_num: Marriage number
+kw10x: When did you get married? (able to answer)
+kw10mth: What month did you get married?
+kw10yr: What year did you get married?
+kw11: How old were you when your [...] marriage started?
+kw11b: What is the status of your [...]  marriage
+kw18x: When did the marriage end/separation? (able to answer)
+kw18mth: When (month) did the marriage end/separation begin?
+kw18yr: When (year) did the marriage end/separation begin?
+kw19: How old were you when the [...] marriage ended/separation began?
+kw20: Highest education level attended by  your husband/wife of the [...] marriage
+kw21: Highest grade completed by  your husband/wife of the [...] marriage
+kw22a: Ivw chk (panel): Other marriage?
+kw22b: Ivw Chk (new): other marriage?
+
+--- b3a_mg1.dta ---
+mg01bx: What is the Kecamatan of birthplace?
+mg01cx: What is the Kabupaten of birthplace?
+mg01dx: What is the Province of birthplace?
+mg01ex: What is the Country of birthplace?
+mg01e: Code of Country of birthplace
+mg01d: Code of Province of birthplace
+mg01c: Code of Kabupaten of birthplace
+mg01b: Code of Kecamatan of birthplace
+mg02: Is the name of birthplace the same?
+mg03aax: Is the Desa name same with birthplace?
+mg04: What best describes your birthplace?
+mg08a: When you were 12 ,were your biologal parents still married?
+
+--- b3a_pk1.dta ---
+pk00a: Are you currently married/cohabitate?
+pk19bx: What was the date of your current/most recent marriage? (able to answer)
+pk19bm: What was the date of your current/most recent marriage? (month)
+pk19by: What was the date of your current/most recent marriage? (year)
+pk19c: Ivwr check: marriage before 2007
+pk20a: Was your father alive when you  married/cohabitated?
+pk20b: Was your mother alive when you  married/cohabitated?
+pk20c: Was your father-in-law alive when you  married/cohabitated?
+pk20d: Was your mother-in-law alive when you  married/cohabitated?
+
+--- b3a_pk2.dta ---
+pk2type: Type of expenditure and use of time
+
+--- b3a_pk3.dta ---
+pk20ax: Ivr: Was father alive when you  married/cohabitated?
+pk20bx: Ivr: Was mother alive when you  married/cohabitated?
+pk20cx: Ivr: Was Father-in-law alive when you  married/cohabitated?
+pk20dx: Was mthr-n-law alive when you  married/cohabitated?
+pk21: At time of marriage/cohabitate, how did the status of your parents compare to th
+
+--- b3a_tk1.dta ---
+tk16ax: What was your monthly income when you were working at that job? (able to answer)
+tk16b: Source of income from last job
+tk16a: What was your monthly income when you were working at that job?
+
+--- b5_cov.dta ---
+dob_day: Date of birth: Day
+dob_mth: Date of birth - month
+dob_yr: Date of birth - year
+birth_cert: Does [NAME OF CHILD] have a BIRTH CERTIFICATE?
+birth_cert_reas: Why does  [CHILD NAME]  not have a BIRTH CERTIFICATE?
+
+--- b5_maa1.dta ---
+maa06: Have you ever suffered from the disease [...] in childhood (from birth until now
+
+--- b5_rja2.dta ---
+rja15: Length of time you had to wait
+
+--- b5_rja3.dta ---
+rja28ady_c: Date received immunization: Polio 0 (at birth)
+rja28amt_c: Month received immunization: Polio 0 (at birth)
+rja28ayr_c: Year received immunization: Polio 0 (at birth)
+
+--- b4_ba6.dta ---
+ba64bx: Do you know month and year of birth
+ba64bmt: Month of birth date
+ba64byr: Year of birth date
+
+--- b4_bf.dta ---
+bf04: Did you ever breastfeed a child?
+bf05x: Do you know when child was first fed fresh water?
+bf05: Age child was first fed fresh water
+bf051: Age child was first fed fresh water
+bf07x: For how many months did you breastfeed
+bf08: Reason stopped breastfeeding
+
+--- b4_br.dta ---
+br01: Have you ever given birth?
+br08: Have you ever given live birth to a son or daughter, even one who lived only for
+br11: Have you ever had a stillbirth?
+br12: Number of stillbirths you have had
+br13: Have you had any miscarriages?
+br14: Number of miscarriages you have had
+br15: Total number of live births
+br15x: Is the number of livebirths correct?
+br16: Total number of stillbirths & miscarriages
+br16x: Is number of still births & miscarriages correct?
+
+--- b4_bx6.dta ---
+bx64bx: Do you know the month and year of birth
+bx64bmt: Month of birth
+bx64byr: Year of birth
+
+--- b4_ch0.dta ---
+ch01aa: After last child have you pregnant again?
+ch01ab: Number of pregnancies after last child
+ch01ad: Total number of live births
+ch01ae: Total number of stillbirths and miscarriages
+ch01acx: Are you currently pregnant?
+ch01ac: Are you currently pregnant?
+ch02a: Total pregnancies since last child
+ch01ba: Total number of live births
+ch01bb: Total number of stillbirths & miscarriages
+ch01bcx: Are you currently pregnant ?
+ch01bc: Are you currently pregnant?
+ch02b: Total number of pregnancies
+chp00x: are you ever pregnant in the last 5 years?
+
+--- b4_ch1.dta ---
+ch05: Chronological order of pregnancy's outcome
+ch06: Classification of pregnancy's outcome
+ch06a: Did pregnancy end in multiple birth?
+ch09x: Do you know date of end/pregnancy?
+ch09day: Date of end of pregnancy: day
+ch09mth: Date of end of pregnancy: month
+ch09yr: Date of end of pregnancy: year
+ch10a: Age of Respondent at end of pregnancy
+ch10b: Use age to estimate child's year of birth
+ch17: Length of time of pregnancy when it ended
+ch17x: How far was pregnant when it ended?
+ch12: Interviewer note : Pregnancy end:
+ch13: Interviewer note : other pregnant or live births?
+ch14a: During the pregnancy
+ch14: Did you ever have a pregnancy check-up?
+ch16a: Number of Visits for pregnancy care St trisemester
+ch16b: Number of Visits for pregnancy care 2nd trim
+ch16c: Number of Visits for pregnancy care in 3rd trim
+ch16da: Did you get service: weight?
+ch16dd: Did you get service: test hemoglobin?
+ch18: Interviewer note : preg/miscarriage
+ch18aa: Why were you got miscarriage?
+ch18a: Did you got sick on your stomach before give birth ?
+ch18b: Did you have more haemorrahage than are normal when give birth?
+ch18c: Did you have high fever when give birth?
+ch19: Where did you give birth?
+ch20: Who provided care during child's birth?
+ch21: Interviewer note: live birth
+ch23: Was your baby weighted after birth?
+ch24: Baby's weight in kgs
+ch24a: Did you ever breastfeed the child?
+ch24cx: When was child when St fed water?
+ch24c: Child's age when first fed water
+ch24c1: Child's age when first fed water
+ch24f: Why did you stop breastfeeding?
+
+--- b4_cov.dta ---
+dob_day: Date of birth - day
+dob_mth: Date of birth - month
+dob_yr: Date of birth - year
+
+--- b4_cx1.dta ---
+cxtype: Type of birth control
+
+--- b4_cx2.dta ---
+cx20: Are you or spouse using birth control?
+
+--- b4_kw2.dta ---
+kw03: How many times have you been married
+kw02a1: Do you have a marriage certificate with current/latest spouse/partner
+kw02e: Before you got married did you receive an injection of TT?
+kw02ix: What was the date of your current/most recent marriage? (able to answer)
+kw02imt: What was the date of your current/most recent marriage? (Month)
+kw02iyr: What was the date of your current/most recent marriage?  (Year)
+kw02n: What was the highest education level attended by  your spouse of the [...] marri
+kw12a: What was the bride price/dowry for your current/ most recent marriage?
+kw12bx: What was the value of the dowry of your current/most recent marriage at the time
+kw13bx: Right after the wedding ceremony of your current/latest marriage, did you move?
+kw14c: Length of time you lived in 1st  residence
+kw14c1: Length of time you lived in 1st residence
+kw14d: Did your spouse/partner change residence after marriage?
+kw14d2: Length of time you live together before the wedding
+kw04: Who chose your husband ( 1st marriage) ?
+kw12b: What was the value of the dowry of your current/most recent marriage at the time
+
+--- b4_kw3.dta ---
+kwn_num: Marriage number
+kw10x: What (month/year) did you get married? (able to answer)
+kw10mth: Date of marriage: month
+kw10yr: Date of marriage: year
+kw11: Your age when you got married
+kw11a: Do you living together before marriage?
+kw11b: Current status of the marriage
+kw18x: When (month/year) did the marriage end/separation begin?
+kw18mth: Date when marriage ended: month
+kw18yr: Date when marriage ended: year
+kw19: Your age when married ended
+kw22a: CAPI CHECK KW10: ANY OTHER MARRIAGE AFTER 2006/BEFORE 2007
+kw22b: INTERVIEWER CHECK: ANY OTHER MARRIAGE?

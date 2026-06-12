@@ -1,0 +1,4 @@
+  File "/Users/arya/Documents/Tugas Akhir/prenava/stunting ml/notebook/stunting_paper_final.py", line 1
+    try:n    from IPython.display import displaynexcept ImportError:n    display = printn
+             ^^^^
+SyntaxError: invalid syntax

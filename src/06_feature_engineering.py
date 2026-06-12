@@ -6,7 +6,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 PROCESSED_DIR = Path("Data/processed")
-INPUT_FILE = PROCESSED_DIR / "05b_child_mother_stunting_cleaned.csv"
+INPUT_FILE = PROCESSED_DIR / "05c_child_mother_augmented.csv"
 OUTPUT_FILE = PROCESSED_DIR / "dataset_final.csv"
 
 IFLS_MISSING_PATTERNS = ["98:Don't know", "99:Missing", "9:Missing", "98:DK"]
@@ -58,7 +58,7 @@ RAW_TEXT_COLUMNS = [
     "child_age", "mother_age",
 ]
 
-POST_ENCODING_DROP = ["haz_score", "height_cm", "age_in_months"]
+POST_ENCODING_DROP = ["haz_score", "height_cm"]
 
 
 def clean_ifls_missing(df: pd.DataFrame) -> pd.DataFrame:
@@ -146,6 +146,50 @@ def main():
     df["mother_employment_status"] = df["mother_employment_status"].astype(int)
     df["is_teenage_mother"] = df["is_teenage_mother"].astype(int)
     df["is_high_risk_mother_age"] = df["is_high_risk_mother_age"].astype(int)
+
+    # 7.5 New Feature Engineering (Categorization of Clinical Features)
+    # 1. child_birth_weight
+    if "child_birth_weight" in df.columns:
+        df["child_birth_weight"] = df["child_birth_weight"].fillna(df["child_birth_weight"].median())
+        df["low_birth_weight"] = (df["child_birth_weight"] < 2.5).astype(int)
+    
+    # 2. maternal_hemoglobin
+    if "maternal_hemoglobin" in df.columns:
+        df["maternal_hemoglobin"] = df["maternal_hemoglobin"].fillna(df["maternal_hemoglobin"].median())
+        df["maternal_anemia"] = (df["maternal_hemoglobin"] < 11).astype(int)
+    
+    # 3. maternal_bmi
+    if "maternal_bmi" in df.columns:
+        df["maternal_bmi"] = df["maternal_bmi"].fillna(df["maternal_bmi"].median())
+        df["maternal_bmi_underweight"] = (df["maternal_bmi"] < 18.5).astype(int)
+        df["maternal_bmi_overweight"] = (df["maternal_bmi"] >= 25.0).astype(int)
+    
+    # 4. maternal_anc_visits
+    if "maternal_anc_visits" in df.columns:
+        df["maternal_anc_visits"] = df["maternal_anc_visits"].fillna(df["maternal_anc_visits"].median())
+        df["adequate_anc"] = (df["maternal_anc_visits"] >= 4).astype(int)
+    
+    # 5. hh_food_expenditure_weekly
+    if "hh_food_expenditure_weekly" in df.columns:
+        df["hh_food_expenditure_weekly"] = df["hh_food_expenditure_weekly"].fillna(df["hh_food_expenditure_weekly"].median())
+        df["food_expenditure_quintile"] = pd.qcut(df["hh_food_expenditure_weekly"], q=5, labels=[1, 2, 3, 4, 5], duplicates='drop').astype(int)
+
+    # 6. maternal_risk_score
+    df["maternal_risk_score"] = 0
+    if "maternal_anemia" in df.columns:
+        df["maternal_risk_score"] += df["maternal_anemia"]
+    if "low_birth_weight" in df.columns:
+        df["maternal_risk_score"] += df["low_birth_weight"]
+    if "maternal_bmi_underweight" in df.columns:
+        df["maternal_risk_score"] += df["maternal_bmi_underweight"]
+    if "is_teenage_mother" in df.columns:
+        df["maternal_risk_score"] += df["is_teenage_mother"].fillna(0)
+    if "mother_height_cm" in df.columns:
+        df["short_mother"] = (df["mother_height_cm"] < 150).astype(int)
+        df["maternal_risk_score"] += df["short_mother"]
+    if "mother_education_level" in df.columns:
+        df["mother_education_low"] = (df["mother_education_level"] <= 2).astype(int)
+        df["maternal_risk_score"] += df["mother_education_low"]
 
     # 8. Validate mother_age_at_birth
     invalid_age = (df["mother_age_at_birth"] < 0) | (df["mother_age_at_birth"] > 60)

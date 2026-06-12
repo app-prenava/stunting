@@ -1,0 +1,118 @@
+# Stunting Prediction Modeling and Explainable AI
+
+
+
+Machine learning models for early stunting risk prediction, evaluates model performance, performs threshold tuning, and applies SHAP and LIME for model interpretation.
+
+## 1. Setup and Imports
+
+## 2. Visualization Helper Functions
+
+## 3. Load Dataset
+
+
+
+The dataset used in this step is the machine-learning-ready dataset from Step 6.
+
+## 4. Dataset Overview
+
+## 5A. Data Understanding and Quality Assessment
+
+## 5B. Step-by-Step Preprocessing Plan (Table + Visualization)
+
+## 5. Feature Engineering Summary
+
+
+
+The final dataset includes engineered predictors such as mother_age_at_birth, teenage mother indicator, high-risk maternal age indicator, delivery insurance status, and one-hot encoded ANC location.
+
+## 6. Exploratory Data Analysis
+
+## 7. Feature Correlation Analysis
+
+## 7A. Additional EDA for Thesis Defense (Supportive)
+
+## 8. Train-Test Split
+
+
+
+The dataset is split using an 80:20 stratified split to preserve the target class distribution.
+
+## 8A. Validation Gates (Dataset and Preprocessing Integrity)
+
+## 8B. Preprocessing Completeness Audit
+
+## 9. Cross-Validation
+
+
+
+Five-fold stratified cross-validation is used to estimate model generalization.
+
+## 10. Model Training and Evaluation
+
+## 10A. Complete Classification Report Tables and Overfitting Check
+
+## 11. ROC Curve Comparison
+
+## 12. Metric Comparison
+
+## 13. Confusion Matrices
+
+## 14. Best Model Selection
+
+## 15. Threshold Tuning
+
+### Threshold Tuning Visualization
+
+## 15A. Threshold Validation for Screening Objective
+
+## 16. Save Model Artifacts
+
+---
+
+
+
+# Step 8: Explainable AI
+
+
+
+SHAP is used as the primary XAI method because it supports both global and local interpretation. LIME is used as a local comparison method.
+
+## 17. SHAP — Global Interpretability Setup
+
+## 18. SHAP Summary Plot
+
+## 19. SHAP Feature Importance (Bar Chart)
+
+## 20. SHAP Waterfall Plot
+
+
+
+This plot explains one stunted sample, showing how each feature drives the prediction above or below the baseline.
+
+## 21. LIME Local Explanation
+
+## 22. LIME Visualization
+
+## 23. SHAP vs. LIME Comparison
+
+
+
+| Method | Scope | Strengths | Limitations | Role in Study |
+
+|---|---|---|---|---|
+
+| **SHAP** | Global + Local | Mathematically consistent (Shapley values); stable across runs | Higher computational cost for large datasets | **Primary XAI method** |
+
+| **LIME** | Local only | Intuitive; approximates local decision boundary | Less stable due to local random sampling | Local comparison baseline |
+
+## 24. XAI Validation Summary
+
+## 25. Interpretation
+
+
+
+SHAP is used as the main Explainable AI method because it provides both global and local feature attribution with mathematical consistency (grounded in Shapley values from cooperative game theory), while LIME serves as a local comparison method. The moderate model performance reflects the multifactorial nature of stunting, where maternal and socioeconomic variables explain only part of the risk. Therefore, the model is positioned as an **early warning system** for Prenava, not as a definitive diagnostic tool.
+
+## 26. Thesis Defense Readiness Checklist (PASS/FAIL)
+
